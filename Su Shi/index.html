@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Su Shi</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Home/index.html"><h4>Home</h4></a>
+            <a href="#poem"><h2>“Immortal by the River”—Returning at Night to Linggao</h2></a>
+            <h4 id = "year">1082</h4>
+            <h4 id = "author">Su Shi</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./su-shi.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Photo by Keren Su. A stone sculpture of Su Shi in Meishan, Sichuan Province, China.</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">A</span>rt critic Alastair Sooke describes Su Shi(h)'s remarkable and diverse career during the Song dynasty, a period known for its artistic refinement in China.<sup><a class = "footnotes" href="#footnote1">1</a></sup>Su Shi, a pre-eminent scholar of the era, excelled as a poet, politician, writer, calligrapher, painter, and aesthetic theorist. Sooke suggests the term "proto-Renaissance man" to capture Su Shi's prolific contributions across various fields, despite being born centuries before Da Vinci.</p>
+        <p><br>To grasp Su's significance in Chinese culture, understanding the Song dynasty's context is crucial. This period (960-1279) marked a turning point with population growth, economic empowerment, and increased education. Sophia Zhou, a specialist in Chinese Paintings, emphasizes that the Song dynasty reached the pinnacle of artistic achievement in Chinese history.<sup><a class = "footnotes" href="#footnote2">2</a></sup></p>
+        <p><br>The Song Dynasty's governance, led by scholar officials chosen through a meritocratic examination system, fostered a flourishing of painting and calligraphy—essential arts for scholar-officials. Unlike before, these officials were now expected not only to appreciate art aesthetically but also to possess the skill to create it.<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+        <p><br>Su Shi, also known as Su Dongpo, lived from January 8, 1037, to August 24, 1101. Engaging in various art types and fields from  poetry, essays, politics, calligraphy, painting, gastronomy, and travel writing, he played a crucial role in the political landscape of his time. Su aligned himself with figures like Sima Guang and opposed the New Policies faction led by Wang Anshi.<sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>Having a lengthy bureaucratic career with various provincial roles and serving as a senior official at the central imperial court, Su experienced political exiles that fueled his creative output, particularly in poetry. Widely recognized as a master of classical Chinese literature, he written famous poems, lyrics, prose, and essays. His clear and insightful essay writing contributed significantly to the understanding of topics like 11<sup>th</sup>-century Chinese travel literature and the iron industry. Su Shi resided on a property known as Dongpo, the source of his literary pseudonym, which translates to 'Eastern Slope.’</p>
+        <p><br>Su's influence extended beyond his lifetime, with enduring popularity in China, Japan, and other nearby regions. Translations by Arthur Waley and Stephen Owen introduced his works to English-speaking audiences. In the realm of arts, Su was hailed as "the preeminent personality of the eleventh century."<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+        <p><br>Even today, Su Shi remains a beloved and influential figure, appreciated by both intellectuals and the general public. Contemporary researchers acknowledge his profound impact on the spirits and thoughts of the Chinese people, comparing his cultural and philosophical influence to that of Mencius<sup><a class = "footnotes" href="#footnote6">6</a></sup>and Zhuangzi.<sup><a class = "footnotes" href="#footnote7">7</a></sup></p>
+        <p><br>The first time Su Shih crossed my radar was ironically linked to food, quite a departure from his usual realms of poetry and politics. (Not because this name reminds me of the Japanese dish though!) I vividly recall a Thursday afternoon when my mom, freshly acquainted with a recipe from the local community center, prepared Dongpo pork for our family. It's amusing how Su earns the nickname 'Da Vinci of the East,' given his role as one of the four ancient gastronomes of China. His diverse writings touched on various topics, including cuisine, evident in the famous dish named after him in Hangzhou cuisine. Legend has it that Su Shi once got so engrossed in a game of Chinese chess<sup><a class = "footnotes" href="#footnote8">8</a></sup>with an old friend that he forgot about the stewed pork he was cooking. The dish ended up thick-cooked and incredibly fragrant, serving as a testament to his culinary adventures. However, conflicting legends suggest that villagers might have named the pork dish in his honor after his passing, though no concrete evidence supports either claim.</p>
+        <p><br>In this spirit, I have included the following poem, penned in 1082 CE, this composition captures the time when Su Shi underwent demotion and resettlement to what is presently identified as the Huangzhou district in Hubei Province.<sup><a class = "footnotes" href="#footnote9">9</a></sup>Despite facing political challenges, Su Shi retained a deep connection to the natural environment. The verses express his desire to relinquish the pursuit of status, fame, and wealth, opting instead for a life of solitude.<sup><a class = "footnotes" href="#footnote10">10</a></sup></p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>Drinking at night on the Eastern Slope, I sobered up and got drunk again.<br>
+                When I arrived back home, it was about midnight.<br>
+                The young servant was snoring like thunder,<br>
+                not responding, no matter how hard I knocked.<br>
+                Supported by a walking stick, I listened to the river.<br>
+                I have long regretted that this body does not belong to me.<br>
+                When can I stop pursuing fame and money?<br>
+                The night comes to an end, the wind stops, and the waves in the ravine die down.<br>
+                Let me drift away on a small boat from now on,<br>
+                and entrust the rest of my life to rivers and seas. <br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Qian Jia<sup><a class = "footnotes" href="#footnote11">11</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                夜飲東坡醒復醉，<br>
+                歸來彷彿三更。<br>
+                家童鼻息已雷鳴。<br>
+                敲門都不應，<br>
+                倚杖聽江聲。<br>
+                長恨此身非我有，<br>
+                何時忘卻營營。<br>
+                夜闌風靜縠紋平。<br>
+                小舟從此逝，<br>
+                江海寄餘生。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Cheang, Alice W. "Poetry, politics, philosophy: Su Shih as the man of the Eastern Slope." <span class="italicize">Harvard Journal of Asiatic Studies</span>, vol. 53, no. 2, 1993, p. 325, <a href="https://doi.org/10.2307/2719453">https://doi.org/10.2307/2719453.</a></li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Zhou, Sophia. “Specialists Talk about the True Value of 1000-Year-Old Chinese Painting by Su Shi.” <span class="italicize">The Value</span>, 6 Sept. 2018, <a href="https://en.thevalue.com/articles/sushi-wood-and-rock-christies-interview?source=post_page---------------------------">https://en.thevalue.com/articles/sushi-wood-and-rock-christies-interview?source=post_page---------------------------.</a></li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>“Who Was Su Shi, and Why Is He so Revered within Chinese Culture?.” <span class="italicize">Christie’s</span>, 20 Nov. 2018, <a href="www.christies.com/en/stories/su-shi-giant-of-chinese-culture-64a72a8689a14c3694f37f3babcb4abb">www.christies.com/en/stories/su-shi-giant-of-chinese-culture-64a72a8689a14c3694f37f3babcb4abb.</a></li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Wang Anshi (1021–1086), a significant figure during the Song dynasty, held roles as an economist, philosopher, poet, and politician, serving as chancellor. He implemented controversial New Policies, focusing on economic reforms like increased currency circulation and breaking up private monopolies. Despite early success, Wang Anshi fell out of favor with the emperor, underscoring the challenges of his ambitious reforms in governance.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup> Ebrey, Patricia Buckley. <span class="italicize">The Cambridge Illustrated History of China</span>. Cambridge University Press, 1999.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Mencius, a Chinese philosopher in the Warring States period, expanded Confucian thought, emphasizing the inherent goodness of human nature. He believed in the transformative power of education and advocated benevolent governance for societal harmony.</li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Zhuangzi, a Daoist philosopher from the same era, promoted Daoism's principles of spontaneity and living in harmony with the Dao. His work, "Zhuangzi," explores the concept of wu wei, or effortless action, encouraging individuals to embrace life's uncertainties and recognize the relativity of perspectives. His influence extends beyond Daoism, impacting Chinese Buddhism and philosophical discussions on reality and the self.</li>
+            <li id="footnote8" class = "footnote-content"><sup class = "footnotes">8</sup>Xiangqi, also known as Chinese Chess, is a strategic board game deeply rooted in Chinese history and culture. Played on a gridded board with distinctive pieces representing military forces, the game unfolds with each player aiming to checkmate their opponent's general. Xiangqi demands strategic prowess, tactical thinking, and a keen understanding of the intricate moves unique to each piece, making it a revered pastime and a symbol of intellectual prowess in Chinese tradition.</li>
+            <li id="footnote9" class = "footnote-content"><sup class = "footnotes">9</sup>Hegel, Robert E. "The sights and sounds of Red Cliffs: On reading Su Shi." <span class="italicize">Chinese Literature: Essays, Articles, Reviews (CLEAR)</span>, vol. 20, 1998, pp. 11–30, <a href="https://doi.org/10.2307/495262">https://doi.org/10.2307/495262.</a></li>
+            <li id="footnote10" class = "footnote-content"><sup class = "footnotes">10</sup>Hartman, Charles. “Poetry and politics in 1079: The Crow Terrace Poetry Case Of Su Shih.” <span class="italicize">Chinese Literature: Essays, Articles, Reviews (CLEAR)</span>, vol. 12, 1990, pp. 15–44, <a href="https://doi.org/10.2307/495222">https://doi.org/10.2307/495222.</a></li>
+            <li id="footnote11" class = "footnote-content"><sup class = "footnotes">11</sup>Jia, Qian. “臨江仙 | To the tune 'Immortal by the River'.” <span class="italicize">Global Medieval Sourcebook</span>, <a href="https://sourcebook.stanford.edu/sites/all/modules/custom/vm/VersioningMachine/texts/su_shi_returning_night_linggao.html#">https://sourcebook.stanford.edu/sites/all/modules/custom/vm/VersioningMachine/texts/su_shi_returning_night_linggao.html#</a></li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

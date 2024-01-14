@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Robert Burns</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+            
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 20px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Love/index.html"><h4>Love</h4></a>
+            <a href="#poem"><h2>A Red, Red Rose</h2></a>
+            <h4 id = "year">1794</h4>
+            <h4 id = "author">Robert Burns</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./robert-burns.webp" alt="">
+            <div class="image-citation italicize">
+                <p>Stock Montage / Getty Images</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">B</span>orn in the quaint town of Alloway in the beautiful southwest of Scotland, Robert "Rabbie" Burns, a skilled farmer deeply connected to rustic traditions, balladry, and the toil of the land, etched his name in literary history.<sup><a class = "footnotes" href="#footnote1">1</a></sup>Revered for his poetic prowess and convivial spirit, Burns left an indelible mark on Scottish literature, widely regarded as the national poet of Scotland.</p>
+        <p><br>While tending to the fields, Burns, a vocal critic of the rigid doctrines of the Church of Scotland, also championed the cause of egalitarianism. His family extended beyond the offspring he had with Jean Armour, and his opposition to the Church's Calvinistic beliefs set him apart as a figure challenging societal norms.<sup><a class = "footnotes" href="#footnote2">2</a></sup></p>
+        <p><br>In 1786, Burns catapulted into literary prominence with the publication of "Chiefly in Scottish Dialect" in Kilmarnock. This collection, housing masterpieces like "To a Mouse," caught the attention of Edinburgh's literary circles, prompting subsequent expanded editions.<sup><a class = "footnotes" href="#footnote3">3</a></sup>In addition to creating his original works, Burns actively gathered traditional folk songs from various corners of Scotland, frequently modifying or adjusting them to his distinctive style. His renowned composition, the poem and song "Auld Lang Syne," frequently resonates during Hogmanay, marking the year's final day. Another notable piece, "Scots Wha Hae," held a lasting role as an unofficial national anthem for the country.<sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>Despite a shift in his views on the French Revolution, Burns remained dedicated to its principles, evident in works such as "For a’ that and a’ that" penned in 1794. Around the age of 30, inspired by the unfolding events, Burns crafted some of his most celebrated pieces.<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+        <p><br>Born into the hardships of impoverished tenant farmers, Burns's perspective resonated with the struggles of the oppressed, setting him apart from bourgeois sentiments. Widely celebrated in Scotland and its diaspora, Burns became known not only for his adept use of the Scottish language but also for his earnest and direct narrative style.<sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+        <p><br>Addressing themes of equality, anticlericalism, and Scottish nationalism, Burns's influence extended beyond his time, leaving an imprint on revered British poets and writers like Wordsworth, Coleridge, Shelley, Ramsay,<sup><a class = "footnotes" href="#footnote7">7</a></sup>Fergusson,<sup><a class = "footnotes" href="#footnote8">8</a></sup>and MacDiarmid.<sup><a class = "footnotes" href="#footnote9">9</a></sup> His impact also seeped into the foundational ideologies of future leaders in socialism and liberalism, cementing Burns as a literary luminary with an enduring legacy.<sup><a class = "footnotes" href="#footnote10">10</a></sup></p>
+        <p><br>At times, in both poetry and prose, comparisons are explicitly articulated, as demonstrated in the following poem.</p>
+        <p><br>In the initial four lines, the speaker employs explicit comparisons, known as similes, stating that his love “like a … rose” and “like [a] melodie.” Unlike metaphors,<sup><a class = "footnotes" href="#footnote11">11</a></sup> similes typically involve the words ‘like’ or ‘as’ and are often more casual, making swift comparisons without elaborate development. In <span class="italicize">A Red, Red Rose</span>, these similes assume a pre-existing positive perception of roses and melodies, offering quick compliments without further elaboration or reminder of attractive details.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>O my Luve is like a red, red rose<br>
+                That’s newly sprung in June;<br>
+             O my Luve is like the melody<br>
+                That’s sweetly played in tune.<br>
+                <br>
+             So fair art thou, my bonnie lass,<br>
+                So deep in luve am I;<br>
+             And I will luve thee still, my dear,<br>
+                Till a’ the seas gang dry.<br>
+                <br>
+             Till a’ the seas gang dry, my dear,<br>
+                And the rocks melt wi’ the sun;<br>
+             I will love thee still, my dear,<br>
+                While the sands o’ life shall run.<br>
+                <br>
+             And fare thee weel, my only luve!<br>
+                And fare thee weel awhile!<br>
+             And I will come again, my luve,<br>
+                Though it were ten thousand mile.<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Mays, Kelley J. <span class="italicize">The Norton Introduction to Literature: Shorter Eleventh Edition</span>. W. W. Norton and Company, 2012, pp. 808.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Woodring, Carl, and James Shapiro. <span class="italicize">The Columbia Anthology of British Poetry</span>. Columbia University Press, 1995, pp. 419.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>“Robert Burns.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/robert-burns">https://www.poetryfoundation.org/poets/robert-burns.</a></li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Courtauld, George. <span class="italicize">England’s Best Loved Poems: The Enchantment of England</span>, Ebury Press, 2007, pp. 130.</li>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">5</sup>Kelley J. Mays, pp. 809.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Johnson, Ben. “The Life of Robert Burns.” <span class="italicize">Historic UK</span>, <a href="https://www.historic-uk.com/HistoryUK/HistoryofScotland/Robert-Rabbie-Burns/">https://www.historic-uk.com/HistoryUK/HistoryofScotland/Robert-Rabbie-Burns/.</a></li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Allan Ramsay, a Scottish makar, publisher, librarian, and impresario in early Enlightenment Edinburgh, wielded influence that reached England. He engaged in correspondence with William Hamilton of Bangour, William Somervile, John Gay, and Alexander Pope.</li>
+            <li id="footnote8" class = "footnote-content"><sup class = "footnotes">8</sup>Robert Fergusson, a Scottish poet, pursued a bohemian lifestyle in Edinburgh, his birthplace, following formal education at the University of St Andrews, during a period of intellectual and cultural vigor known as the Scottish Enlightenment.</li>  
+            <li id="footnote9" class = "footnote-content"><sup class = "footnotes">9</sup>Hugh MacDiarmid, the pen name of Christopher Murray Grieve, was a Scottish poet, journalist, essayist, and political figure, recognized as a leading force in the Scottish Renaissance with a lasting influence on both culture and politics.</li>  
+            <li id="footnote10" class = "footnote-content"><sup class = "footnotes">10</sup>“Robert Burns.”</li>
+            <li id="footnote11" class = "footnote-content"><sup class = "footnotes">11</sup>A metaphor is a rhetorical device that directly links one concept to another for effect, serving to enhance clarity or reveal concealed similarities between distinct ideas.</li>  
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

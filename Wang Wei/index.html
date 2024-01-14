@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Wang Wei</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Nature/index.html"><h4>Nature</h4></a>
+            <a href="#poem"><h2>Deer Fence</h2></a>
+            <h4 id = "year">High Tang</h4>
+            <h4 id = "author">Wang Wei</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./wang-wei.png" alt="">
+            <div class="image-citation italicize">
+                <p>Painting by Shangguan Zhou from 晩笑堂竹荘畫傳, published 1921.</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">W</span>ang Wei, a distinguished figure in the middle Tang dynasty, was renowned for his multifaceted talents as a poet, painter, musician, and statesman. Embracing the humanist principles of a Chinese scholar-official, he served in various bureaucratic roles within the Tang court, navigating the challenges of the Anshi Rebellion (755–759) while mourning the loss of his wife and sister. Following these tribulations, he chose retirement in his countryside residence along the Wang River, where he delved deeper into the study of Buddhism, producing many profound poems.<sup><a class = "footnotes" href="#footnote1">1</a></sup></p>
+        <p><br>As the pioneer behind the Southern School of painter-poets, Wei left an enduring impact on the art world. His landscape paintings, characterized by monochrome and "pomo" techniques, explored the spiritual essence of nature.<sup><a class = "footnotes" href="#footnote2">2</a></sup>Although none of his paintings have survived, the influence of his landscapes persisted through subsequent artists. In his poetry, Wei embodied Zen Buddhist ideals of detachment and simplicity, often depicting natural phenomena like water and mist. Anthologized alongside other Tang dynasty poets such as Li Po and Tu Fu, he is widely acknowledged for his sparing use of details.<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+        <p><br>Wang Wei's prominence extended to his musical prowess, though not preserved, complementing his successful career as a court official. Despite authenticated examples of his paintings being absent, around 400 poems meticulously compiled by his younger brother, Wang Jin, under imperial order, showcase his deep connection with nature. His spiritual journey included a decade of study under Chán<sup><a class = "footnotes" href="#footnote4">4</a></sup>master Daoguang, further enriching his multifaceted life. Wang Wei's legacy endures through his surviving poems, with 29 featured in the 18th-century anthology <span class="italiczie">Three Hundred Tang Poems</span>,<sup><a class = "footnotes" href="#footnote5">5</a></sup>cementing his place as a prominent figure in arts and letters during the Tang dynasty.<sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+        <p><br>The concept conveyed here goes beyond a mere “deserted hills,” one lacking human presence or tangible objects, as indicated by the reference to a dense forest on the mountain. While this interpretation aligns with Wáng Wéi's perspective, it is plausible, given his Buddhist worldview, that the term '空' (empty) signifies a deeper emptiness in the Buddhist sense—a notion of the deceptive or illusory nature of existence, suggesting that all phenomena lack inherent reality. Considering Lù Zhái, a town name, served as one of Wáng's retreats, solitude may indeed have been his sought-after experience, validating the first interpretation. The inherent beauty of this poetic style lies in its ambiguity, allowing room for diverse interpretations and personal reflections, given that the poet's exact intentions remain elusive.</p>
+        <p><br>The lush green hues of the sky and clouds embody a sense of seamless harmony. Each nuanced color invokes contemplation of a taciturn domain, reminiscent of the transcendental realm found in meditation. The mountains stand devoid of human presence, their solitude echoing with distant voices. Sunlight filters through the dense forest, casting a gentle glow on the vibrant green moss. The colors here blend with light, its intensity softened by layers of space, creating a heightened sense of surreal beauty. Moreover, the cool, profound quality of the moss's green, paired with the subtle light, crafts a serene, celestial aesthetic, enriching the stillness and purity of the painting—an authentic portrayal of a secluded haven, a haven for meditation.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>No one is seen in deserted hills,<br>
+                only the echoes of speech are heard.<br>
+                Sunlight cast back comes deep in the woods<br>
+                and shines once again upon the green moss.<br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Stephen Owen<sup><a class = "footnotes" href="#footnote7">7</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                空山不見人，<br>
+                但聞人語響。<br>
+                返景入深林，<br>
+                復照青苔上。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Rouzer, Paul. <span class="italicize">The Poetry and Prose of Wang Wei: Volume 1</span>. Library of Chinese Humanities, 2020.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Chang, H. C. <span class="italicize">Chinese Literature 2: Nature Poetry</span>. Columbia University Press, 1977.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Chang, H. C.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Chán Buddhism, originating in China during the Tang dynasty, is a Mahayana school emphasizing direct experience and meditation (zazen). Characterized by the use of koans to provoke deep contemplation, Chán focuses on non-verbal communication and the transmission of insight from master to disciple. Influenced by Daoist philosophy, Chán Buddhism, known as Zen in Japan, has left a lasting impact with its emphasis on sudden enlightenment and integration of Buddhist principles with a naturalistic worldview.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>The "Three Hundred Tang Poems" is an anthology of classical Chinese poetry compiled during the Qing dynasty in the 18th century. It consists of 311 poems, primarily from the Tang dynasty (618–907), showcasing the diverse styles and themes of the era. Widely regarded as a literary masterpiece, this anthology includes works by renowned poets such as Wang Wei, Li Bai, and Du Fu, offering a comprehensive representation of the rich poetic tradition of the Tang dynasty.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Owen, Stephen. <span class="italicize">The Late Tang: Chinese Poetry of the Mid-Ninth Century</span>. Harvard University Asia Center, 2006, pp. 314.</li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Owen, Stephen. <span class="italicize">An Anthology of Chinese Literature: Beginnings to 1911</span>, W. W. Norton and Company, 1996, pp. 392.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        // Get the current year for the copyright
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

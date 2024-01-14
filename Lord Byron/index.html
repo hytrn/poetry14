@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Lord Byron</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+            
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Love/index.html"><h4>Love</h4></a>
+            <a href="#poem"><h2>[She Walks in Beauty]</h2></a>
+            <h4 id = "year">1814</h4>
+            <h4 id = "author">Lord Byron (George Gordon)</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./lord-byron.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Stock Montage / Getty Images</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">'S</span>he may walk in beauty, but I’ll be damned if she’ll take a walk with poxy sot, George Byron,’ one disgruntled husband exclaimed upon discovering that these the lines in the following poem were dedicated to his wife. It is peculiar, isn’t it, that Byron, a notorious libertine who likened lies to “truth in masquerade,” found himself attracted to the idea of innocence. Byron and the subject of this poem, Anne Beatrix Wilmot, first met each other was at an evening gathering when she adorned a black dress with spangles.<sup><a class = "footnotes" href="#footnote1">1</a></sup></p>
+        <p><br>Byron's tumultuous journey is best traced through his poems. Born in 1788 to a cash-strapped naval captain and a fiercely determined Scottish mother, he inherited the 6th Baron Byron title in 1798 and the manor Newstead Abbey.<sup><a class = "footnotes" href="#footnote2">2</a></sup>With a club foot, wit, genius, and a penchant for carefree seduction, he navigated Harrow, Cambridge, the House of Lords, and London society. The explosive success of Childe Harold’s Pilgrimage (“I awoke one morning and found myself,” he once stated) was followed by travels in the Mediterranean, marriage to Lady Melbourne's prim niece in 1815 (who accused him of incest with his half-sister Augusta, or homosexuality, or both, and seized their daughter Ada Lovelace).<sup><a class = "footnotes" href="#footnote3">3</a></sup>Forced to flee England due to these scandals, this led to debauchery in Venice, a friendship with Percy Bysshe Shelley and his lady, collaboration with Leigh Hunt, and ultimately, death in Missolonghi in 1824, at the age of 36, just as he embarked on his masterpiece, Don Juan—an epic-satire novel-in-verse loosely inspired by a legendary hero.<sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>This poem always touches me deeply, whether it is the first time or in challenging moments. It has a paradoxical effect—on one hand, the iambic tetrameter's rhythm,<sup><a class = "footnotes" href="#footnote5">5</a></sup>coupled with Byron's vivid imagery, soothes me, but on the other hand, it invigorates. It is as if Byron plucked feelings from my heart and turned them into verses. So timeless! When I picture Anne Beatrix Wilmot in that black dress, it is like catching a glimpse of her in the magical evening when we first met. This poem has become my anthem, reflecting the laughter we have shared and the sparkle in my eyes in her presence. In fact, I loved this so much that I memorized and sung the version by Jean Coulthard, which is truly gorgeous.</p>
+        <p><br>Jorge Luis Borges, in his exploration of metaphor in literature, incorporated this very poem into his lecture. He highlights the challenge posed by its opening line, asserting that it resists systematic analysis. Borges contends that the extrapolations within the poem, while splendid, are ultimately unnecessary. The comparison, he suggests, is grasped implicitly, transcending the need for conscious thought. This notion aligns with Wallace Stevens' perspective, articulated in his poem "Man Carrying Thing," where he advocates for a poem that "resists the intelligence almost successfully." Both Borges and Stevens underscore the idea that certain elements of poetry operate beyond immediate intellectual understanding, relying on implicit comprehension and a nuanced engagement with the reader's emotions and intuition.<sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>She walks in beauty, like the night<br>
+                Of cloudless climes and starry skies;<br>
+                And all that’s best of dark and bright<br>
+                Meet in her aspect and her eyes;<br>
+                Thus mellowed to that tender light<br>
+                Which heaven to gaudy day denies.<br>
+                <br>
+                One shade the more, one ray the less,<br>
+                Had half impaired the nameless grace<br>
+                Which waves in every raven tress,<br>
+                Or softly lightens o’er her face;<br>
+                Where thoughts serenely sweet express,<br>
+                How pure, how dear their dwelling-place.<br>
+                <br>
+                And on that cheek, and o’er that brow,<br>
+                So soft, so calm, yet eloquent,<br>
+                The smiles that win, the tints that glow,<br>
+                But tell of days in goodness spent,<br>
+                A mind at peace with all below,<br>
+                A heart whose love is innocent!<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Courtauld, George. <span class="italicize">England’s Best Loved Poems: The Enchantment of England</span>. Ebury Press, 2007, pp. 43.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>“Lord Byron (George Gordon).” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/lord-byron">https://www.poetryfoundation.org/poets/lord-byron.</a></li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Damrosch, Leopold. <span class="italicize">Adventures in English Literature</span>. Harcourt Brace Jovanovich, 1985, pp. 474.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Damrosch, Leopold, pp. 475.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Iambic tetrameter is a poetic meter with lines containing four iambs, creating a rhythmic pattern of unstressed-stressed syllables. It results in a da-DUM da-DUM da-DUM da-DUM rhythm, with each line having eight syllables. Poets commonly use iambic tetrameter for its natural and flowing cadence in verse.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Borges, Jorge Luis. "The Metaphor"<span class="italicize">YouTube</span>, uploaded by church0Fnoise, 2001, <a href="https://www.youtube.com/watch?v=MBO_rp3k6yk&ab_channel=church0Fnoise">https://www.youtube.com/watch?v=MBO_rp3k6yk&ab_channel=church0Fnoise.</a></li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

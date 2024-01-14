@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Li Bai</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: 50%;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Existence/index.html"><h4>Existence</h4></a>
+            <a href="#poem"><h2>Rising Drunk on a Spring Day, Telling My Intent</h2></a>
+            <h4 id = "year">High Tang</h4>
+            <h4 id = "author">Li Bai</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./li-bai.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Phot by user 尘世晓书 / 百家号</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">I</span>I wish to be born in the 8<span class="italicize">th</span> century, not to awe at Tang Ming Huang’s jade stone nor his consort, Yang Guifei’s, bewitching dance, <span class="italicize">Song of rainbow skirts and feather robes</span> (霓裳羽衣曲) but at the appearance and demeanour of the poet nicknamed the Banished Transcendent, a person who never caught sober and would sleep under a willow tree or in the most unscathed corner the tavern in the outskirt of the market but earns the utmost of the emperor and his officials. How would a deadbeat like such regarded amongst the ranks of the Buddha or Confucius? His name was Li Bai.</p>
+       <p><br>Li Bai, under his Japanese name of Rihaku, is regarded from his own time to the present as one of the greatest and most important poets of the Tang dynasty and in Chinese history as a whole. At the ripe age of sixteen, the name Li Bai becomes renowned throughout Sichuan province, yet a Buddhist and Taoist, he is a spirit of freedom and generosity, who disdains earthy matters and seeks a life of seclusion.<sup><a class = "footnotes" href="#footnote1">1</a></sup>Li’s spirit is pure, untethered by the contemporary practices of obsequious cajole, his poetry exudes imagination and freedom, aptly avoiding worldly affairs while retaining a nostalgic charm. His verses often portray dreams of attaining lofty ideals and a yearning to liberate the self from mundane realties.<sup><a class = "footnotes" href="#footnote2">2</a></sup>Simultaneously, they reflect a profound connection with nature and the bonds of friendship.<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+       <p><br>Li Bai penned an astonishing array of over two thousand poems; however, upon completion of each piece, he would cast it away. Affected by the turbulent events of the An Lushan Rebellion<sup><a class = "footnotes" href="#footnote4">4</a></sup>many of his poems were lost to the winds of change. Over the ebbs and flows of history, and thanks to the concerted efforts of the people and scholarly community, the poet's works now endure in a surviving collection of just under a thousand verses.</p>
+       <p><br>During the time of the pandemic in 2019, confined to stay at home, I reluctantly do some gardening work, planting a few mint herbs and strawberries. The elements transition into the brisk air of the spring with early cherry blossoms adorning the landscape. Taking a break and seating at the front porch, I suddenly recall an inebriating poem by Li Bai. Over twelve centuries ago, there was a drunken poet amidst the spring. Though I may not indulge in rice wine as he did, it seems that I am, too, is drunk, drunken by the spirit of a great poet and the turmoil of the world. The poem is named Rising Drunk on a <span class="italicize">Spring Day, Telling My Intent</span> (春日醉起言志).</p>
+       <p><br>The poem's essence lies in the poet's quest for elation within the goblet's embrace, yet beneath the surface, it appears as a mere inhalation of intoxication, a fleeting escape from the unyielding grasp of reality. Enveloped in the intoxicating allure of wine, the poet is suddenly jolted awake, pondering: on what day does this moment unfold? Time slips through the poet's grasp, forgotten and elusive.</p>
+        <p><br>In the bewilderment of inebriation, the vernal spectacle unfolds without recognition, and the poet's inner disquiet remains a phantom. Regrettably, should the poet, in the throes of intoxication, awaken to witness reality unfurling before them, another cup of wine would be poured, to drown in the strains of a song bereft of meaning, all in anticipation of a tranquility and serenity reminiscent of a moonlit night</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>We are lodged in this world as in a great dream;<br>
+                Then why cause our lives so much stress?<br>
+                This is my reason to spend the day drunk<br>
+                And collapse, sprawled against the front pillar.<br>
+                <br>
+                When I wake, I peer out in the yard<br>
+                Where a bird is singing among the flowers.<br>
+                Now tell me, what season is this?—<br>
+                The spring breeze speaks with orioles warbling.<br>
+                <br>
+                I am so touched that I almost sigh,<br>
+                I turn to the wine, pour myself more,<br>
+                Then sing wildly, waiting for the moon,<br>
+                When the tune is done, I no longer care.<br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Stephen Owen<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                處世若大夢,<br>
+                胡爲勞其生.<br>
+                所以終日醉,<br>
+                頹然臥前楹.<br>
+                <br>
+                覺來盼庭前,<br>
+                一鳥花間鳴.<br>
+                借問此何時,<br>
+                春風語流鶯.<br>
+                <br>
+                感之欲嘆息,<br>
+                對酒還自傾.<br>
+                浩歌待明月,<br>
+                曲盡已忘情.<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>"Li Bai."<span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/li-bai">https://www.poetryfoundation.org/poets/li-bai.</a></li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>"Li Bai."</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Cooper, Arthur. <span class="italicize">Li Po and Tu Fu: Poems Selected and Translated with an Introduction and Notes</span>. Penguin Classics, 1973.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>The An Lushan Rebellion occurred during the reign of Emperor Xuanzong (Tang Ming Huang) of the Tang Dynasty in the mid-8th century. An Lushan, a discontented general, rebelled against the imperial government, leading to a devastating conflict that greatly affected the emperor and his court, including the tragic story of Yang Guifei, a beloved imperial consort. The rebellion ultimately contributed to the decline of the Tang Dynasty.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Owen, Stephen. <span class="italicize">An Anthology of Chinese Literature: Beginnings to 1911</span>. W.W. Norton and Company, 1996, pp. 404.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

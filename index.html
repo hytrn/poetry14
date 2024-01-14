@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+     <!--=============== FAVICON ===============-->
+     <link rel="icon" href="./Images/logo.png">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+        position: relative;  
+          font-weight:400;
+          color: #333;
+          text-decoration: none;
+          font-size: 2em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;
+            font-style: normal;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*Slider Styling*/
+        .slider-container{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            width:1000px;
+            height:600px;
+            padding:50px;
+            background-color: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+            margin-top: 40px;
+        }
+        #slide{
+            width:max-content;
+            margin-top:50px;
+            height: 800px;
+        }
+        .item{
+            width:200px;
+            height:300px;
+            background-position: 50% 50%;
+            display: inline-block;
+            transition: 0.5s;
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+            top:50%;
+            transform: translate(0,-50%);
+            border-radius: 20px;
+            box-shadow:  0 30px 50px #505050;
+        }
+        .item:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Adjust the overlay color and opacity */
+            border-radius: 20px;
+        }
+        .item:nth-child(1),
+        .item:nth-child(2){
+            left:0;
+            top:0;
+            transform: translate(0,0);
+            border-radius: 0;
+            width:100%;
+            height:100%;
+            box-shadow: none;
+        }
+        .item:nth-child(3){
+            left:50%;
+        }
+        .item:nth-child(4){
+            left:calc(50% + 220px);
+        }
+        .item:nth-child(5){
+            left:calc(50% + 440px);
+        }
+        .item .content{
+            position: absolute;
+            top:50%;
+            left:100px;
+            width:300px;
+            text-align: left;
+            padding:0;
+            color:#eee;
+            transform: translate(0,-50%);
+            display: none;
+            font-family: system-ui;
+        }
+        .item:nth-child(2) .content{
+            display: block;
+            z-index: 11111;
+        }
+        .item .name{
+            opacity: 0;
+            animation:showcontent 1s ease-in-out 1 forwards;
+            text-transform: uppercase;
+            color: #f9f9f9;
+            font-size: 40px;
+            text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight:500;
+            letter-spacing: 3px;
+            margin-bottom: 0;
+        }
+        .item .des{
+            margin:20px 0;
+            opacity: 0;
+            animation:showcontent 1s ease-in-out 0.3s 1 forwards;
+            color: #f9f9f9;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'Poppins', san-serif;
+            text-justify: auto;
+            margin-top: 0;
+            text-align: left;
+        }
+        .item button{
+            padding:10px 20px;
+            border:none;
+            opacity: 0;
+            font-family: 'Poppins', san-serif;
+
+            appearance: none;
+            background-color: #f9f9f9;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+            box-sizing: border-box;
+            color: #24292E;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Poppins', san-serif;
+            font-weight: 500;
+            line-height: 25px;
+            list-style: none;
+            padding: 6px 16px;
+            position: relative;
+            transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+            word-wrap: break-word;
+            animation:showcontent 1s ease-in-out 0.6s 1 forwards
+        }
+        .item button:hover {
+            background-color: #BF3131;
+            color: #f9f9f9;
+            text-decoration: none;
+            transition-duration: 0.1s;
+        }
+        .item button:active {
+            background-color: #EDEFF2;
+            box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+            transition: none 0s;
+        }
+        @keyframes showcontent{
+            from{
+                opacity: 0;
+                transform: translate(0,100px);
+                filter:blur(33px);
+            }to{
+                opacity: 1;
+                transform: translate(0,0);
+                filter:blur(0);
+            }
+        }
+        .buttons{
+            position: absolute;
+            bottom:30px;
+            z-index: 222222;
+            text-align: center;
+            width:100%;
+            border-radius: 20px;
+        }
+        .buttons button{
+            width:50px;
+            height:50px;
+            border-radius: 50%;
+            border:1px solid #555;
+            transition: 0.5s;
+        }.buttons button:hover{
+            background-color: #BF3131;
+            color: white;
+        }
+
+        #video-play {
+            position: relative;
+            min-height: 200px;
+            background: url('./Home Page/poetry.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: 0 -300px;
+            text-align: center;
+            color: #fff;
+            display: block;
+            top: 800px;
+        }
+        .intro{
+            position: relative;
+            top: 800px;
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article h2 {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article h4 {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10%;
+        }
+        .intro .image-container img {
+            height: 400px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+        }
+        /*Video Play*/
+        #video-play a {
+            color: #fff;
+        }
+        #video-play h1{
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+            color: #f9f9f9;
+            font-size: 40px;
+            font-weight:500;
+            letter-spacing: 3px;
+        }
+        .modal-dialog{
+            position: relative;
+            top: 25%;
+        }
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        /*Timeline*/
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto 1000px;
+            top: 850px;
+        }
+         .timeline-title{
+            text-align: center;
+            margin: 20px auto;
+            margin-bottom: 100px;
+            position: relative;
+            top: 900px;
+            font-weight: 550;
+            font-size: 2.5em;
+        }
+
+        .timeline .container {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline .text-box {
+            padding: 20px 30px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 6px;
+            font-size: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .timeline .container.in-view .text-box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline .left-container{
+            left: 0;
+            margin-left: 0;
+        }
+        .timeline .right-container{
+            left: 50%;
+            margin-left: 0;
+        }
+
+
+        .timeline .left-container i,
+        .timeline .left-container img{
+            position: absolute;
+            width: 60px;
+            border-radius: 50%;
+            right: -30px;
+            top: 32px;
+            z-index: 10;
+            padding: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            font-size: 100px;
+            text-align: center;
+            background-color: white;
+            margin-left: 500px;
+        }
+        .timeline .right-container i,
+        .timeline .right-container img{
+            position: absolute;
+            width: 60px;
+            border-radius: 50%;
+            left: -30px;
+            top: 32px;
+            z-index: 10;
+            padding: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            font-size: 50px;
+            text-align: center;
+            background-color: white;
+        }
+        .timeline .container.in-view i,
+        .timeline .container.in-view img {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background-color: white;
+            border-radius: 5px;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+        }
+
+        .timeline .text-box h2 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline .text-box small {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .timeline .left-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid white;
+            right: -14px;
+        }
+
+        .timeline .right-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid white;
+            left: -14px;
+        }
+        .timeline .container h2{
+            color: #333;
+            font-size: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 0px;
+        }
+        .timeline .container .text-box small{
+            color: #333;
+            font-size: 15px;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            display: block;
+            text-align: center; /* Center the small tag */
+            margin-top: 5px; /* Add some spacing if needed */
+        }
+        .timeline .container p{
+            color: #333;
+            font-size: 17.5px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-content">
+
+
+    <!--Nav Bar-->
+    <header>
+        <div>
+            <img id = "logo-image" src="./Images/logo.png" alt="">
+            <a href="./Home Page/index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="./Home Page/index.html">Home</a></li>
+            <li><a href="./POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+    <!--Slider-->
+    <section>
+        <div class="slider-container">
+            <div id="slide">
+                <div class="item" style="background-image: url(./Nature/nature2.jpg);">
+                    <div class="content">
+                        <div class="name">Nature</div>
+                        <div class="des">So that through it, we may have an intimate conversation with the Earth, a communion with the divine forces that shape our existence.</div>
+                        <a href="./Nature/index.html"><button>Explore</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(./Home/home2.jpg);">
+                    <div class="content">
+                        <div class="name">Home</div>
+                        <div class="des">For me and perhaps to the poet in this selection, home is any place where there is still someone who thinks of you.</div>
+                        <a href="./Home/index.html"><button>Explore</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(./Love/love3.png);">
+                    <div class="content">
+                        <div class="name">Love</div>
+                        <div class="des">I once read somewhere that the oldest poems dwelled on merely three topics—food, religion, and romantic love.</div>
+                        <a href="./Love/index.html"><button>Explore</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(./Regret/regret.jpg);">
+                    <div class="content">
+                        <div class="name">Regret</div>
+                        <div class="des">Frustration, acquiescence, a longing for the past, and remorse are all significant sources of poetic inspiration.</div>
+                        <a href="./Regret/index.html"><button>Explore</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(./Existence/existence2.webp);">
+                    <div class="content">
+                        <div class="name">Existence</div>
+                        <div class="des">In the pursuit of these questions, we discover the tapestry of life and the inexhaustible wellspring of what it truly means to live.</div>
+                        <a href="./Existence/index.html"><button>Explore</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+    </section>
+    
+    <section class = "intro">
+        <article>
+            <h2>On Poetry</h2>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eaque temporibus expedita incidunt modi pariatur odio, commodi voluptatem fugit distinctio optio corrupti odit? Quisquam ullam debitis dolore illo esse aperiam tempora corrupti reiciendis est adipisci sequi perferendis sunt, minus eveniet nostrum animi beatae ipsum culpa deserunt! Consectetur ducimus dolorem libero.</h4>
+        </article>
+        <div class="image-container">
+            <img src="./Home Page/test8.gif" alt="">
+        </div>
+    </section>
+
+    <!--Video Play-->
+    <section id="video-play">
+        <div class="dark-overlay">
+          <div class="row">
+            <div class="col">
+              <div class="container p-5">
+                <a href="#" class="video" data-video="https://www.youtube.com/embed/JwhouCNq-Fc" data-toggle="modal" data-target="#videoModal">
+                  <i class="fas fa-play fa-3x"></i>
+                </a>
+                <h1>What is poetry</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!--Timeline-->
+    <h2 class="timeline-title">Timeline of Poems in this Collection</h2>
+    <div class="timeline" id="timeline">
+        <div class="container left-container" id="item1">
+            <img src="./Home Page/Images/wine.svg" alt="" >
+            <div class="text-box">
+                <h2>Rising Drunk on a Spring Day, Telling My Intent</h2>
+                <small>High Tang</small>
+                <p>Li Bai</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item2">
+            <img src="./Home Page/Images/moon.svg" alt="" >
+            <div class="text-box">
+                <h2>Moonlit Night</h2>
+                <small class = "timeline-year">756</small>
+                <p>Du Fu</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+        
+
+        <div class="container left-container" id="item3">
+            <img src="./Home Page/Images/mountain-1-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>Deer Fence</h2>
+                <small>High Tang</small>
+                <p>Wang Wei</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container "id="item4">
+            <img src="./Home Page/Images/shamisen-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>Song of Pipa Player</h2>
+                <small>Middle Tang</small>
+                <p>Bai Juyi</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container left-container" id="item5">
+            <img src="./Home Page/Images/crow-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>Autumn Evening</h2>
+                <small>Late Tang</small>
+                <p>Du Mu</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item6">
+            <img src="./Home Page/Images/home-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>"Immortal by the River”—Returning at Night to Linggao</h2>
+                <small>1082</small>
+                <p>Su Shi</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container left-container" id="item3">
+            <img src="./Home Page/Images/helmet-roman-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>To My Son</h2>
+                <small>1210</small>
+                <p>Lu You</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item2">
+            <img src="./Home Page/Images/death-grim-reaper-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>Holy Sonnet X</h2>
+                <small>1609</small>
+                <p>John Donne</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container left-container" id="item3">
+            <img src="./Home Page/Images/blind-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>On His Blindness</h2>
+                <small>1655</small>
+                <p>John Milton</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item2">
+            <img src="./Home Page/Images/rose.svg" alt="" >
+            <div class="text-box">
+                <h2>A Red, Red Rose</h2>
+                <small>1794</small>
+                <p>Robert Burns</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container left-container" id="item3">
+            <img src="./Home Page/Images/world-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>[To See the World in a Grain of Sand]</h2>
+                <small>1803</small>
+                <p>William Blake</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item2">
+            <img src="./Home Page/Images/daffodil-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>Daffodil</h2>
+                <small>1807</small>
+                <p>William Wordsworth</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container left-container" id="item3">
+            <img src="./Home Page/Images/love-letter-love-and-romance-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>[She Walks in Beauty]</h2>
+                <small>1814</small>
+                <p>Lord Byron</p>
+                <span class = "left-container-arrow"></span>
+            </div>
+        </div>
+
+        <div class="container right-container" id="item2">
+            <img src="./Home Page/Images/man-holding-a-baby-svgrepo-com.svg" alt="" >
+            <div class="text-box">
+                <h2>If–</h2>
+                <small>1910</small>
+                <p>Rudyard Kipling</p>
+                <span class = "right-container-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top" style=" bottom: 0; width: 100%;">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="./Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+      <!-- VIDEO MODAL -->
+      <div class="modal fade" id="videoModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script>
+        document.getElementById('next').onclick = function(){
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').appendChild(lists[0]);
+        }
+        document.getElementById('prev').onclick = function(){
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').prepend(lists[lists.length - 1]);
+        }
+
+    </script>
+        <script type = "text/javascript">
+            window.addEventListener ("scroll", function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky",window.scrollY>0);
+            });
+    </script>
+
+<script type = "text/javascript">
+    window.addEventListener ("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky",window.scrollY>0);
+
+        var pageHeader = document.getElementById("page-header");
+        var scrollPosition = window.scrollY;
+        var minHeight = 500; // Adjust the minimum height as needed
+
+        pageHeader.style.backgroundPositionY =
+            Math.max(-scrollPosition * 2, -minHeight) + "px";
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const timelineItems = document.querySelectorAll(".timeline .container");
+
+        function handleScroll() {
+            timelineItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                if (rect.top <= viewportHeight * 0.8) {
+                    item.classList.add("in-view");
+                } else {
+                    item.classList.remove("in-view");
+                }
+            });
+        }
+
+        // Initial check in case some items are already in view
+        handleScroll();
+
+        // Throttle scroll event to improve performance
+        let scrollTimeout;
+        window.addEventListener("scroll", function () {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(handleScroll, 100);
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $(".video").click(function () {
+            var theModal = $(this).data("target"),
+                videoSRC = $(this).attr("data-video"),
+                videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function () {
+                $(theModal + ' iframe').attr('src', videoSRC);
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Lu You</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 20px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.75rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Home/index.html"><h4>Home</h4></a>
+            <a href="#poem"><h2>To My Son</h2></a>
+            <h4 id = "year">1210</h4>
+            <h4 id = "author">Lu You</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./lu-you.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Painted during Qing Dynasty</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">L</span>u You was born on November 13, 1125, in a boat in the Wei River<sup><a class = "footnotes" href="#footnote1">1</a></sup>during a rainy morning. China was divided, with the Northern Song dynasty invaded by the Jurchens<sup><a class = "footnotes" href="#footnote2">2</a></sup>of the Jin dynasty. Despite the Southern Song dynasty's resistance in the south, the threat of invasion from the north persisted throughout Lu You's life. Known for his irredentist patriotic poems, he aimed to expel the foreign Jurchen and reunify China under the Song dynasty.<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+        <p><br>After the Jin dynasty conquered the Northern Song capital a year after Lu You's birth, his family fled to the south.<sup><a class = "footnotes" href="#footnote4">4</a></sup>Despite the turmoil, he received a good education and was raised with a strong sense of patriotism. Lu You married his cousin Tang Wan at 20, but they divorced due to his mother's disapproval and her desire for him to focus on saving the Song dynasty. His dissatisfaction over the divorce was evident when he encountered Tang Wan years later, leading to the creation of the famous poem <span class="italicize">Phoenix Hairpin</span>.<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+        <p><br>Lu You pursued an official career but faced challenges due to his anti-Jin stance. His success in civil service exams led to conflicts, and he was dismissed for advocating against the Jin dynasty. Despite multiple promotions and demotions, he retired in 1190 and spent the last two decades of his life in seclusion.<sup><a class = "footnotes" href="#footnote6">6</a></sup>Lu You, a fervent supporter of resisting the Jin dynasty, died on January 26, 1210, at the age of 86, with his regret being the ongoing foreign control of northern China.<sup><a class = "footnotes" href="#footnote7">7</a></sup></p>
+        <p><br>Lu You was an incredibly prolific poet, composing around eleven thousand poems in both the shi (詩) and ci (詞) forms, along with several prose works. This extensive body of work positions him as the poet with the highest number of poems before the 15th century.<sup><a class = "footnotes" href="#footnote8">8</a></sup>Despite the impact on his official career, his poetry consistently expresses his convictions, advocating for the reconquest of the north.</p>
+        <p><br>The themes of his poetry are diverse. Some works echo the sentiments of Du Fu, showcasing a continuation of a poetic legacy. Another set of poems explores country life and the passage of time, drawing comparisons to the styles of Bai Juyi and Tao Qian,<sup><a class = "footnotes" href="#footnote9">9</a></sup>as noted by Watson.<sup><a class = "footnotes" href="#footnote10">10</a></sup></p>
+        <p><br>Lu You's poetic style evolves across three distinct periods, reflecting changes in his life, experiences, and the socio-political context.<sup><a class = "footnotes" href="#footnote11">11</a></sup>His extensive contribution to Chinese poetry places him at the forefront of literary figures with a significant impact before the 15th century.</p>
+        <p><br>Lu You authored numerous poems, with To My Son (示兒) standing out as one of his most renowned works. Notably, he penned this final poem as he approached the end of his life. My late great-grandfather held a special affection for this particular poem, most likely because of his connection with the warcry generation, having directly experienced the Vietnam War. While I never had the chance to meet my great-grandfather in person, I learned about his admiration for the poem through my grandfather's vivid descriptions, “What this poem means is that he does not mind not being able to take anything with him when he dies, but he is upset to see that China is still not united as a nation. He is telling his son that if this day ever comes, his family must not forget to go to his grave and tell him there.”</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>Dying now, I know full well<br>
+                that nothing truly matters,<br>
+                and yet I'm sad I did not see<br>
+                China united once more.<br>
+                The day the royal armies quell<br>
+                our heartland in the North,<br>
+                forget not in our family rites<br>
+                to let this old man know. <br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Stephen Owen<sup><a class = "footnotes" href="#footnote11">12</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                死去元知萬事空，<br>
+                但悲不見九州同。<br>
+                王師北定中原日，<br>
+                家祭無忘告乃翁。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>The Wei River is a major tributary of the Yellow River in China, flowing through the provinces of Gansu, Shaanxi, and Henan. Renowned for its historical significance, the river basin has been a cradle of Chinese civilization, hosting various ancient cultures and serving as a key transportation route. The Wei River is often associated with significant events in Chinese history and is celebrated for its contributions to the country's rich cultural heritage.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>The Jurchens were a tribal people of Northeast Asia who played a significant role in Lu You's life during the Jin–Song wars. In the early 12th century, the Jurchen Jin dynasty invaded the Northern Song dynasty, leading to the division of China. Lu You's family, along with many others, faced displacement and sought refuge in the southern part of the country, where the Southern Song dynasty resisted the Jurchen invasion for several decades.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Rexroth, Kenneth. <span class="italicize">Love and the Turning Year: One Hundred More Poems from the Chinese</span>, New Directions, 1970, pp. 653</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Rexroth, Kenneth. pp. 533</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Watson, Burton. <span class="italicize">The Old Man Who Does as He Pleases: Selections from the Poetry and Prose of Lu Yu</span>, Columbia University Press, 1994.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Waston, Burton.</li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Moyan, Wang. "Lu You.” <span class="italicize">Chinese Culture</span>, <a href="https://en.chinaculture.org/focus/focus/cities/2010-08/11/content_390569.htm">https://en.chinaculture.org/focus/focus/cities/2010-08/11/content_390569.htm.</a></li>
+            <li id="footnote8" class = "footnote-content"><sup class = "footnotes">8</sup>Watson, Phillip. <span class="italicize">Grand Canal, Great River: The Travel Diary of a Twelfth-century Chinese Poet</span>, Frances Lincoln Publishers, 2007.</li>
+            <li id="footnote9" class = "footnote-content"><sup class = "footnotes">9</sup>Tao Yuanming (365–427 CE) was a renowned Chinese poet and recluse of the Eastern Jin Dynasty. Celebrated for his pastoral and introspective poetry, he is best known for works such as “Peach Blossom Spring," which reflects his pursuit of a simple, idyllic life away from political turmoil. Tao Yuanming is considered a literary icon and a representative figure of the Six Dynasties period in Chinese literature.</li>
+            <li id="footnote10" class = "footnote-content"><sup class = "footnotes">10</sup>Waston, Burton. <span class="italicize">The Columbia Book of Chinese Poetry</span>, Columbia University Press, 1984.</li>
+            <li id="footnote11" class = "footnote-content"><sup class = "footnotes">11</sup>Waston, Phillip.</li>
+            <li id="footnote12" class = "footnote-content"><sup class = "footnotes">12</sup>Owen, Stephen. <span class="italicize">An Anthology of Chinese Literature: Beginnings to 1911</span>, W. W. Norton and Company, 1996, pp. 698</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

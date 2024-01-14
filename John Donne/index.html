@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>John Donne</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Existence/index.html"><h4>Existence</h4></a>
+            <a href="#poem"><h2>Holy Sonnet X</h2></a>
+            <h4 id = "year">1609</h4>
+            <h4 id = "author">John Donne</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./john-donne.webp" alt="">
+            <div class="image-citation italicize">
+                <p>Photo by John Broadley / The New Yorker</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">D</span>Donne entered the world as part of a deeply religious Catholic family, with an uncle leading a Jesuit mission in England, and a brother, Henry, meeting his end in prison in 1593 for sheltering a Catholic priest. A versatile individual, Donne donned various roles, including that of a soldier, lawyer, politician, and, eventually, a priest.<sup><a class = "footnotes" href="#footnote1">1</a></sup>His familial connections included ties to Sir Thomas More.<sup><a class = "footnotes" href="#footnote2">2</a></sup>In the early 1590s, Donne forsook Catholicism and embraced Anglicanism for his continued education.</p>
+        <p><br>Donne's life took a downturn when he secretly married Ann More, the niece of Lady Edgerton, the wife of his patron and a wealthy Surrey landlord—against his father’s wishes, Sir Thomas Egerton. This decision led to Donne's dismissal from Egerton's service. By 1615, he shifted his focus to a career in the Anglican church, eventually rising to the position of Dean of St. Paul’s in London. Here, his brilliance as a preacher gained widespread acclaim. Over forty literary years, Donne produced a diverse body of work, encompassing songs, sonnets, elegies, satires, anniversary poems, verse letters, and, in his later years, divine meditations, sermons, and devotions.<sup><a class = "footnotes" href="#footnote3">3</a></sup>Although his poems circulated in manuscript form, they were posthumously collected and published in 1633. Donne's reputation faced a decline in the eighteenth and nineteenth centuries, only to experience a revival in the early twentieth century, fueled by the interest of W. B. Yeats<sup><a class = "footnotes" href="#footnote4">4</a></sup> and T. S. Eliot.<sup><a class = "footnotes" href="#footnote5">5</a></sup><sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+        <p><br>I had always assumed that Donne wrote this sonnet toward the end of his life, which might have been caused by a typhoid fever. In fact, Donne penned this sonnet at the age of 37 during his 14-year period of disgrace, not in the twilight of his life as an esteemed Anglican priest.</sup> and T. S. Eliot.<sup><a class = "footnotes" href="#footnote7">7</a></sup>Much like his love poems infused with religious imagery, Donne's holy sonnets exuded intense romantic and even erotic undertones. In this poem, one of his most celebrated piece, the speaker personifies Death and cautions it against arrogance in its perceived power. The speaker contends that Death's dominion is illusory, offering only respite from worldly burdens to its supposed "victims." Death is portrayed as subservient to other forces—fate, chance, kings, and desperate men—thus lacking true control. Even in its alleged restorative role, Death is deemed inferior to drugs. The speaker concludes by prophesying the demise of Death itself with the declaration, "Death, thou shalt die," an allusion to 1 Corinthians 15:26: "The last enemy that shall be destroyed is death."</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>Death, be not proud, though some have called thee<br>
+                Mighty and dreadful, for thou are not so;<br>
+                For those whom thou think'st thou dost overthrow<br>
+                Die not, poor Death, nor yet canst thou kill me.<br>
+                From rest and sleep, which but thy pictures be,<br>
+                Much pleasure; then from thee much more must flow,<br>
+                And soonest our best men with thee do go,<br>
+                Rest of their bones, and soul's delivery.<br>
+                Thou'art slave to fate, chance, kings, and desperate men,<br>
+                And dost with poison, war, and sickness dwell,<br>
+                And poppy'or charms can make us sleep as well<br>
+                And better than thy stroke; why swell'st thou then?<br>
+                One short sleep past, we wake eternally,<br>
+                And death shall be no more; Death, thou shalt die.<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Damrosch, Leopold. <span class="italicize">Adventures in English Literature</span>. Harcourt Brace Jovanovich, 1985, pp. 236.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>St. Thomas More was the Lord Chancellor executed by Henry VIII in 1535 for his refusal to deny the authority of the Pope, and was canonised in 1935. (Go Jugglers!) Two of Donne’s uncles, while wrangling over the ownership of one of More’s teeth, were staggered when it miraculously split in two, allowing each to have half.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Mays, Kelley J. <span class="italicize">The Norton Introduction to Literature: Shorter Eleventh Edition</span>. W. W. Norton and Company, 2012, pp. 1083.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>William Butler Yeats (1865–1939) was an Irish poet, playwright, and key figure in the Irish Literary Revival. Born in Dublin, Yeats co-founded the Abbey Theatre in 1904 and played a significant role in the Irish literary renaissance. His poetry, deeply rooted in Irish mythology and folklore, evolved through different phases, from the romantic early works to the more complex and symbolic later poems. Yeats received the Nobel Prize in Literature in 1923. His notable works include "The Tower," "The Winding Stair and Other Poems," and "The Second Coming."</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Thomas Stearns Eliot (1888–1965) was an American-British poet, essayist, and critic. Born in St. Louis, Missouri, Eliot moved to England in 1914, where he became a central figure in the modernist literary movement. His most famous poem, "The Waste Land" (1922), is a landmark work in modernist literature. Eliot's poetry often explored themes of disillusionment and the fragmented nature of contemporary society. He won the Nobel Prize in Literature in 1948. Other significant works include "The Love Song of J. Alfred Prufrock" and "Four Quartets." Eliot also played a crucial role in literary criticism with influential essays like "Tradition and the Individual Talent."</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>“John Donne.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/john-donne">https://www.poetryfoundation.org/poets/john-donne.</a></li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Courtauld, George. <span class="italicize">England’s Best Loved Poems: The Enchantment of England</span>, Ebury Press, 2007, pp. 175.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>       
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

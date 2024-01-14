@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Bai Juyi</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: 50%;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 45px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Regret/index.html"><h4>Regret</h4></a>
+            <a href="#poem"><h2>Song of Pipa Player</h2></a>
+            <h4 id = "year">Middle Tang</h4>
+            <h4 id = "author">Bai Juyi</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./bai-juyi.jfif" alt="">
+            <div class="image-citation italicize">
+                <p>Bai Juyi (Hakurakuten) in blue. Woodblock printing from A True Mirror of Chinese and Japanese Poetry (Shika shashin kyō)
+</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">T</span>he Tang Dynasty in China lasted from 618 to 907. It was a period that, despite enduring persistent warfare, witnessed a flourishing economy. It was also a few centuries during which the strength of the farmers emerged strongly, and the conflicts between the farmers and the aristocratic feudal classes were deeply heightened. The economic and political foundations laid during that time contributed to the vibrant development of the social and cultural structures in the upper echelons.<sup><a class = "footnotes" href="#footnote1">1</a></sup></p>
+        <p><br>Bai Juyi lived through the reigns of eight or nine emperors, being born in the Dali regnal era (766-779) of Emperor Daizong of Tang. He had a long and successful career both as a government official and a poet, although these two facets of his career seemed to have come in conflict with each other at certain points.<sup><a class = "footnotes" href="#footnote2">2</a></sup>Bai Juyi was also a devoted Chan Buddhist toward the end of his life in Luoyang, referring to himself as the Hermit of Xiangshan (香山居士).<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+        <p><br>In 815, due to accusations from a group of powerful officials, he was demoted and left the capital Chang'an,<sup><a class = "footnotes" href="#footnote4">4</a></sup>relocating to become a regional military official in Jiangzhou. Because he did not submit with the prevailing officials at that time, Bai Juyi's career path was filled with many difficulties.</p>
+        <p><br>In 820, he was reassigned to the capital under the reign of Emperor Muzong (Li Heng). However, feeling disillusioned with the court's political intrigues and power struggles, he offered his resignation to take a position in northern Hubei. When this request was denied, he decided to leave the capital on his own accord.<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+        <p><br>In 822, he was appointed as the Prefect of Hangzhou. In 825, he served as the Prefect of Suzhou. In both of these locations, he actively engaged in water conservancy projects. The infrastructure initiated by him provided a sense of security for the local people, allowing them to live and farm with peace of mind. As a result, he earned the admiration and respect of the local population<sup><a class = "footnotes" href="#footnote6">6</a></sup>.</p>
+        <p><br>In contrast to the romanticism in the poetry of Li Bai, Bai Juyi inherits the realism of Du Fu – perhaps because his life, too, has experienced many ups and downs. Nevertheless, his poetry is not melancholic and stifled like that of Du Fu, often carrying gentle satire and mockery. His works consistently imbue humane and humanistic ideas with a simple poetic style, reflecting the harsh life of the lower social classes.<sup><a class = "footnotes" href="#footnote7">7</a></sup></p>
+        <p><br>Due to their common themes and low-key, near vernacular verses, his works are widely popular among the common people. During his lifetime, his poetry became prevalent throughout the Great Tang Dynasty and influenced neighboring areas like the Korean Peninsula, Japan, Vietnam, etc.<sup><a class = "footnotes" href="#footnote8">8</a></sup></p>
+        <p><br>Speaking of Bai Juyi, one cannot overlook Song of Everlasting Regret (長恨歌), considered his magnum opus. This lengthy poem, using the love story of Emperor Xuānzong and Consort Yang as a backdrop, skillfully employs deep sentimental artistry to not only narrate a tale but also indirectly highlight a truth: in a society marked by bloody power struggles, even emperors cannot find true satisfaction, and beautiful women, leaning on imperial favor, only endure more unjust suffering! The latter part also critiques the emperor's licentious behavior and the arrogance of beautiful women who take advantage of their imperial positions.</p>
+        <p>Another prominent poem of Bai is the Song of the Pipa<sup><a class = "footnotes" href="#footnote9">9</a></sup>Player (琵琶行). Thus, in a sense, he is comparing his fate in this tumultuous time to that of a pipa player, one of the lowest of societal rank in the ancient, misogynistic society.</p>
+        <p><br>A poet expresses his innermost feelings of a wanderer in the poem, avoiding any words of resentment but emphasizing the weight of destiny. They cry for the circumstances without blaming or accusing anyone. The reader, like a guest at a banquet, feels a profound connection and sheds tears, empathizing with the human condition, much like a boat navigating life's seas, experiencing both glory and adversity. Whether in prosperity or adversity, when all worldly ties are severed, the purpose of human existence becomes uncertain. Is it for self-cultivation? For an artist, especially one as emotionally rich and refined as Bai Juyi, perhaps it is about savoring the bittersweet flavors of life.</p>
+        <p><br>The depth of this sadness is truly understood by those who have shared similar sorrows. I am starting to question if, in reality, it is sadness, not love, that lends a distinctive charm to the world of poetry. I might even venture to say that human sorrow has, in fact, given rise to what we now know as poetry. What are your thoughts on this?</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>With bitter reeds and yellowed rushes all about the house.<br>
+                And what is to be heard here, morning and evening? —<br>
+                The bleeding cry of cuckoos, the whimpering of apes.<br>
+                On flowery spring mornings and moonlit autumn nights<br>
+                I have often taken wine up and drunk it all alone,<br>
+                Of course there are the mountain songs and the village pipes,<br>
+                But they are crude and-strident, and grate on my ears.<br>
+                And tonight, when I heard you playing your guitar,<br>
+                I felt as if my hearing were bright with fairy-music.<br>
+                Do not leave us. Come, sit down. Play for us again.<br>
+                And I will write a long song concerning a guitar."<br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Stephen Owen<sup><a class = "footnotes" href="#footnote10">10</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                黃蘆苦竹繞宅生。<br>
+                其間旦暮聞何物，<br>
+                杜鵑啼血猿哀鳴。<br>
+                春江花朝秋月夜，<br>
+                往往取酒還獨傾。<br>
+                豈無山歌與村笛，<br>
+                嘔啞嘲哳難為聽。<br>
+                今夜聞君琵琶語，<br>
+                如聽仙樂耳暫明。<br>
+                莫辭更坐彈一曲，<br>
+                為君翻作琵琶行。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Hinsch, Bret. <span class="italicize">Passions of the Cut Sleeve</span>. University of California Press, 1990.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Hinsch, Bret.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>This area, now a UNESCO World Heritage Site, is famous for its tens of thousands of statues of Buddha and his disciples carved out of the rock called the Longmen Grottoes, the best display of Chinese Buddhist art.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Chang'an, the capital of over ten ancient Chinese dynasties, means "Perpetual Peace" in Classical Chinese. During the Tang Dynasty, it was a major global city for politics, culture, trade, and international relations. Positioned centrally, it served as a hub for economic and cultural exchange. However, its capital status changed over time due to strategic or political reasons, leading to periods of decline and eventual diminished importance after the Tang Dynasty.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Owen, Stephen. <span class="italicize">The Late Tang: Chinese Poetry of the Mid-Ninth Century</span>. Harvard University Asia Center, 2006, pp. 45.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Owen, Stephen. pp. 46.</li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Owen, Stephen. pp. 47.</li>
+            <li id="footnote8" class = "footnote-content"><sup class = "footnotes">8</sup>Hinsch, Bret.</li>
+            <li id="footnote9" class = "footnote-content"><sup class = "footnotes">9</sup>The pipa is a traditional string instrument, resembling a lute, with a softer and more plaintive sound compared to a guitar. In the past, it was an instrument that gentlewomen often learned to play.</li>
+            <li id="footnote10" class = "footnote-content"><sup class = "footnotes">10</sup>Owen, Stephen. <span class="italicize">An Anthology of Chinese Literature: Beginnings to 1911</span>, W. W. Norton and Company, 1996, pp. 442.</li>
+
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

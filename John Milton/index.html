@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>John Milton</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+            
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Regret/index.html"><h4>Regret</h4></a>
+            <a href="#poem"><h2>On His Blindness</h2></a>
+            <h4 id = "year">1655</h4>
+            <h4 id = "author">John Milton</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./john-milton.jfif" alt="">
+            <div class="image-citation italicize">
+                <p>Photo by Stock Montage / Getty Images</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">M</span>ilton, born three years prior to the 1611 appearance of the King James Bible, received education at St. Paul’s and Cambridge. A staunch parliamentarian, he assumed the role of Secretary of Foreign Tongues for Cromwell’s Council of State in 1649, a post held until Charles II's Restoration in 1660.</p>
+        <p><br>Secluding himself thereafter, Milton confronted the encroaching blindness in 1650, beginning the epic creation of <span class = "italicize">Paradise Lost,</span><sup><a class = "footnotes" href="#footnote1">1</a></sup>and was fully blind two years later. Completing his magnum opus in 1663, he sold its copyright for £10.<sup><a class = "footnotes" href="#footnote2">2</a></sup> Yet, it elevated Milton’s reputation as one of the greatest poets in history.<sup><a class = "footnotes" href="#footnote3">3</a></sup><span class="italicize">Paradise Regained</span> and <span class="italicize">Samson Agonistes</span> followed in 1671, a time of extreme religious influx and political turmoil. A humorous, witty anecdote from one of my old English teachers, Mr. Allin, who suggested that, during the composition of these works, Milton, blind on his bed, dictated verses to each of his three daughters, blessing their marriages only upon the novels' completion.</p>
+        <p><br>Milton dismissed rhyme as ‘but the intervention of a barbarous age, to set off wretched matter and lame metre’<sup><a class = "footnotes" href="#footnote4">4</a></sup>and talked of ‘the troublesome and modern bondage of rhyming,’ a sentiment he seems to have forgotten when writing the following sonnet. Through only sonnets can we as readers really understand Milton’s Personal struggles. This sonnet commemorates key events in his filled with extraordinary creatively ambitions and self-discipline. Here, we can see attitudes so classic of Milton: a proud individualist fervently subordinates under God.</p>
+        <p><br>I chose not to include excerpts from the much better-known Paradise Lost, but this sonnet for a deep, personal significance. One of my first assignments for school in Canada for me was to recite a poem of my choice for ‘Language Art’ class. Wanting to make a good first impression, I did not want to present a Shakespearean sonnet, something that is all too common, and thus I picked Milton's, unbeknownst to me how biographer William Hayley regarded him as the “greatest English author.”<sup><a class = "footnotes" href="#footnote5">5</a></sup>While classmates effortlessly navigated the assignment, with one even composing his own <span class="italicize">limerick</span>,<sup><a class = "footnotes" href="#footnote6">6</a></sup> I stumbled through hideous phrases like ‘ere’ and ‘doth,’ grappling with the thick Vietnamese accent at the time. Looking back as a senior though, I dare say “my light is [well] spent.”</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>When I consider how my light is spent,<br>
+                Ere half my days, in this dark world and wide,<br>
+                   And that one Talent which is death to hide<br>
+                   Lodged with me useless, though my Soul more bent<br>
+                To serve therewith my Maker, and present<br>
+                   My true account, lest he returning chide;<br>
+                   “Doth God exact day-labour, light denied?”<br>
+                   I fondly ask. But patience, to prevent<br>
+                That murmur, soon replies, “God doth not need<br>
+                   Either man’s work or his own gifts; who best<br>
+                   Bear his mild yoke, they serve him best. His state<br>
+                Is Kingly. Thousands at his bidding speed<br>
+                   And post o’er Land and Ocean without rest:<br>
+                   They also serve who only stand and wait.<br>
+                </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Paradise Lost, Milton's magnum opus, recounts Satan's seduction of Adam and Eve and their expulsion from the Garden of Eden. Over the years, it has sparked controversy over theological motifs, political insights, and the portrayal of Satan as a protagonist. This influential work has inspired other lengthy poems, including Alexander Pope’s <span class="italicize">The Rape of the Lock</span>, William Wordsworth’s <span class="italicize">The Prelud</span>, and John Keats’s <span class="italicize">Endymion</span>. It has also left its mark on Mary Shelley’s <span class="italicize">Frankenstein</span> and influenced the works of Percy Bysshe Shelley and William Blake; the latter having illustrated an edition of Paradise Lost.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Courtauld, George. <span class="italicize">England’s Best Loved Poems: The Enchantment of England</span>, Ebury Press, 2007, pp. 32.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>“John Milton.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/john-milton">https://www.poetryfoundation.org/poets/john-milton.</a></li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Milton, John. <span class="italicize">The Poetical Works of John Milton</span>. Clarendon Press, 1900, pp. 154.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>McCalman, Iain, et al. <span class="italicize">An Oxford Companion to the Romantic Age</span>. Oxford University Press, 2001, pp. 384.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>A limerick is a poetic form originating in 18th-century England. When coupled with a refrain, it creates a limerick song—a traditional, humor-laden drinking song, frequently featuring risqué, inapproriate verses.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

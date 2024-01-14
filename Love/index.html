@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--=============== TITLE ===============-->
+     <title>Love</title>
+
+     <!--=============== FAVICON ===============-->
+     <link rel="icon" href="../Images/logo.png">
+
+      <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px;
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*Page Header*/
+        #page-header {
+            height: 400px; 
+            width: auto;
+            margin-top: 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./love3.png') top center no-repeat;
+            background-size: cover;
+            text-align: justify;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        #page-header h1{
+            text-transform: uppercase;
+            color: #f9f9f9;
+            font-size: 5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight:500;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        #page-header p{
+            color: #f9f9f9;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'Poppins', serif;
+            width: 80%; 
+            margin: 0 auto 15px; 
+        }
+
+        #content {
+            max-width: 1200px; /* Adjust the max-width as needed */
+            margin: 0 auto;
+        }
+        #content .card{
+            margin-top: 20px;
+        }
+        #content .card-title{
+            color: #333;
+            font-size: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 00;
+            letter-spacing: 1px;
+            margin-top: 0px;
+        }
+        #content .card-year{
+            color: #333;
+            font-size: 15px;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+        #content .card-author{
+            color: #333;
+            font-size: 17.5px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        #content img{
+            height: 10%;
+        }
+
+        #content .btn{
+            background: #BF3131;
+            border: 1px solid #BF3131;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 16px;
+            min-height: 40px;
+            outline: 0;
+            padding: 12px 14px;
+            text-align: center;
+            text-rendering: geometricprecision;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #content .btn:hover,
+        #content .btn:active {
+            background-color: initial;
+            background-position: 0 0;
+            color: #BF3131;
+        }
+        #content .btn:active {
+            opacity: .5;
+        }
+
+
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+<body>
+    <!--Nav Bar-->
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <!--Page Header-->
+    <div id="page-header">
+        <div class="container">
+          <div class="row">
+            <div class="container-xxl m-auto text-center">
+              <h1>Love</h1>
+              <p>“How do I love thee? Let me count the ways.”</p>
+                <p>I once read somewhere that the oldest poems dwelled on merely three topics—food, religion, and romantic love. For I think, to be a poet is really to be a lover. In this section, each poem addresses a different type of love: Eros, Storge, Philia, and even, Agape. Not by intent but by luck, my selection spans the entire spectrum of what love encompasses.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <section id ="content" class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../Lord Byron/lord-byron2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">[She Walks in Beauty]</h5>
+                        <h6 class="card-year">1814</h6>
+                        <h6 class="card-author">Lord Byron</h6>
+                        <a href="../Lord Byron/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../Du Fu/du-fu2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Moonlit Night</h5>
+                        <h6 class="card-year">756</h6>
+                        <h6 class="card-author">Du Fu</h6>
+                        <a href="../Du Fu/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="../Robert Burns/robert-burns2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">A Red, Red Rose</h5>
+                        <h6 class="card-year">1794</h6>
+                        <h6 class="card-author">Robert Burns</h6>
+                        <a href="../Robert Burns/index.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Footer-->
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+
+            var pageHeader = document.getElementById("page-header");
+            var scrollPosition = window.scrollY;
+            var minHeight = 500; // Adjust the minimum height as needed
+
+            pageHeader.style.backgroundPositionY =
+                Math.max(-scrollPosition * 2, -minHeight) + "px";
+        });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>

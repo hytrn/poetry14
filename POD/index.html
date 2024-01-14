@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--=============== TITLE ===============-->
+     <title>Poem of the Day</title>
+
+     <!--=============== FAVICON ===============-->
+     <link rel="icon" href="../Images/logo.png">
+
+      <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px;
+        }
+        
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*Poem*/
+        #poem-section {
+            display: flex;
+            flex-direction: row; /* Set the direction to row */
+            justify-content: center;
+            flex: 1;
+            margin: 100px auto;
+            height: auto;
+            width: 1000px;
+            margin-top: 200px;
+        }
+        #poem-container {
+            flex: 1;
+        }
+        #poem-title {
+            color: #333;
+            font-size: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        #poem-container{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .image-container {
+            width: 300px; /* Adjust the width based on your design */
+            margin-top: 20px; /* Add some top margin for spacing */
+            margin-left:100px;
+        }
+        .image-container img{
+            width: 500px; /* Adjust the width based on your design */
+            background-color: #f9f9f9;
+        }
+
+
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+<body>
+    <!--Nav Bar-->
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <!--Content-->
+
+    <div id="poem-section">
+        <div class = "poem-content">
+            <div id="poem-title">
+            </div>
+            <div id="poem-container">
+            </div>
+        </div>
+        <div class="image-container">
+        </div>
+    </div>
+    <!--Footer-->
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+
+            var pageHeader = document.getElementById("page-header");
+            var scrollPosition = window.scrollY;
+            var minHeight = 500; // Adjust the minimum height as needed
+
+            pageHeader.style.backgroundPositionY =
+                Math.max(-scrollPosition * 2, -minHeight) + "px";
+        });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+
+    <script>
+        // Sample arrays of poem titles and content. Replace these with your own collection.
+        const poemTitles = [
+            "pura Vida to be",
+            "Palm Sugar",
+            "untitled poem 1",
+            "Waves",
+            "Solivagant"
+        ];
+
+        const poems = [
+            "Staring at the vivid night,<br> \
+            Of cloudless climes and starry skies,<br> \
+            All that is best of dark and bright.<br> \
+            Doomed to be star-crossed lover? I’ll sigh.<br> \
+            Mellow you’re dainty sight<br> \
+            Which heaven to gaudy day denies.<br> \
+            <br> \
+            On those lips, o’er that brow<br> \
+            Mirror mirror on the wall who is the fairest of them all?<br> \
+            You fleur is fair but fairer we deem thou.<br> \
+            Auric princess I enthral<br> \
+            Likewise fairy tale’s visual; so divine of heaven endows.<br> \
+            By thy face is so meek and mild, savoring in awe<br> \
+            Clothed in white, sun ray besnow.<br> \
+            Vis-à-vis eye to eye, time softens, no banal<br> \
+            Where thoughts serenely sweet bestow.<br> \
+            Incisive, straight through my heart the “wound” is quick and keen; I fall.<br> \
+            Of beauteous palpitate my heart of which is no longer in poise somehow<br> \
+            How benign, how irenic, how pure, how comely, my dwelling place called<br> \
+            Your voice shames skylarks on all boughs,<br> \
+            Joy delights in joy, her voice sings Your Glory in all applause.<br> \
+            Nameless grace breathes, raven tress sings, my privilege, I felt nothing, but a light-headed, joy of vivacity somehow.<br> \
+            <br> \
+            So soft so calm yet eloquent enough<br> \
+            Henceforth my heart is of no vacancy.<br> \
+            No shade more no ray less, less is more; Hallow of<br> \
+            Already the apple of my eyes is thee.<br> \
+            Transpose vile into convivial, heaven ordained sweet odour which doth life it aviates above<br> \
+            “Winged Cupid painted blind.” Eros, is it a sin to adore thee? For t’is in harmony.<br> \
+            The smile that conquers the tints that glow; Cherub in human form thus.<br> \
+            Exalted was I behold the angel sings her harmony (notes) from above,<br> \
+            Blessed of me for this magical mystique melts my unfettered soul so sweetly<br> \
+            Of the finest, her angelic voice gives me wings to fly like a dove.<br> \
+            Days of goodness spent, for why her presence slay me instantly?<br> \
+            “There is always something left to love.”<br> \
+            pura Vida to be.<br>",
+            "Exist no mortal souls whose heart is blissful before love.<br> \
+            Heaven and hell converge at V:<br> \
+            Joy is to know; woe drags the patience<br> \
+            Gazing at the Moon, my Vivid one<br> \
+            Sweet moonlight the avenue my love to Moon.<br> \
+            Should you know, the more I peer (at my Sublime One), the more peerless:<br> \
+            Lush ebony mane, eyes of vermillion phoenix, eyebrows of silkworms<br> \
+            To count the ways you resemble splendor Moon:<br> \
+            Wishing high tides of the young Moon soaks my heart of barren Earth<br> \
+            exclusivity, singularity<br> \
+            Why aren’t you giddy? one small step for you, one giant leap for me.<br> \
+            Aureate in distant cosmos, those Moon glasses ornate the Oriental china.<br> \
+            Tonight, should Moon be bright and full I care not, for my heart’s as clear as always;<br> \
+            Patiently I nurture for Harvest Moon.<br> \
+            Wander the Earth just to realize the two omnipresent,<br> \
+            The Moon and you–the girl I enamoured.<br> \
+            Avail gusts, heaping morning stars for my queen of cherub.<br> \
+            This adornment is beyond expression, fifteen phases of “rolling eyes” I still love.<br> \
+            <br> \
+            Unveil your heart; look up<br> \
+            What else beside the ceiling? the stars?<br> \
+            Stellar is the pitch-black dome sprinkled of stars; to count,<br> \
+            At the last of stars the steadfast limerence starts to wither.<br> \
+            How a single glimpse of pearly tint adorn bulb of cherry blossom vernal prosperity is nigh exalts this unkempt heart.<br> \
+            Holding this hand of pleat virginal petals<br> \
+            Majestic fingers honeyed my ears by Moonlight Sonata. Entice birds to fall!<br> \
+            Gaiety gait of genteel as first snow gifted I am gaping this gentle grace<br> \
+            Just a pose and at your feet the world shall fall.<br> \
+            My contemplation, my dynamic contemplation!<br> \
+            Not on the rosy cheeks, Love is the tears from the eyes of the lovesick.<br> \
+            <br> \
+            Me meeting you like Liu Bei meeting Kong Ming.<br> \
+            without you fish without water,<br> \
+            Birch stark in boisterousness<br> \
+            You my heart is tangled wool, whirlpool of perdition.<br> \
+            Our Lady of Perpetual Succor, when would the shunning end?<br> \
+            Self-cultivation or pomposity?<br> \
+            A message leaves me blank.<br> \
+            Sugar, salt, and dirt; if this comes to fruition, what differs this saṃsāra from nirvana!<br> \
+            We will never be like Butterfly Lovers, yet our glamorous time is shorter than a butterfly’s flutter<br> \
+            O the smile that shames flowers,<br> \
+            She is a woman, therefore to be cherished,<br> \
+            Crossed arms and wish for the pulchritude of water, fragrance, and sky that beauty lives with virtues.<br> \
+            <br> \
+            To my left the Cross (I have to bear) To my right the seraphic girl–my Moon by the Window<br> \
+            <br> \
+            Harmonious God’s plan I brawl, so in my arms she shall befall.<br> \
+            ",
+            "should Moon no longer light our way tonight,<br> \
+            darkness creeps and soothes our sight.<br> \
+            love you in lambency, one love one light,<br> \
+            my love shines ever be our dawn, hearts set alight.<br> \
+            <br> \
+            seconds link seconds, dawn ignites<br> \
+            to you a field of fragrance no bound in sight,<br> \
+            like your smiling lips I love since when with all my might?<br> \
+            the letter of nine misses and ten waits I write<br> \
+            <br> \
+            dye my world your eyes, O illustrious sight<br> \
+            a mix of dawn's delight.<br> \
+            Love, a fate, a debt we both hold tight,<br> \
+            a bond so strong, outlasts days with nights.<br> \
+            <br> \
+            nights dreaming of sun, a warmth pure and bright<br> \
+            hearts ablaze, and bliss takes flight.<br> \
+            though Moon may wane, and days no longer excite<br> \
+            to you my life, the one love upright.<br> \
+            ",
+            "O, the waves:<br> \
+            it crawls gently ashore<br> \
+            it ebbs harmoniously<br> \
+            <br> \
+            wild, sultry<br> \
+            And<br> \
+            gentle, brisk<br> \
+            Listen to the Ocean, how frightening<br> \
+            yet Water sustains Life.<br> \
+            <br> \
+            in both nights and days<br> \
+            restlessly, the gurgling waves, the gasping waves forging its harmony.<br> \
+            <br> \
+            the sun needs muddy water to background its brilliance.<br> \
+            the greater this fireball scorches, the more these eyes blinded before waves and Life.<br> \
+            O the thirst for love,<br> \
+            swirling in this young chest<br> \
+            O the hunger for love,<br> \
+            ravenous for a gust of wind amid summer noon.<br> \
+            <br> \
+            adoring this blazing sun,<br> \
+            conferring the scythe this vivid glamour.<br> \
+            the sun lies fair; delightful is Life<br> \
+            tipsy Waves of her color.<br> \
+            before her, to (be) cool…evaporative cooling<br> \
+            <br> \
+            ice floats…a solid float<br> \
+            paradoxically, isn’t it?<br> \
+            so the thing we call love.<br> \
+            yet the hardships toward the height is all that matters.<br> \
+            <br> \
+            Waves is happy<br> \
+            …<br> \
+            happy because Waves is water<br> \
+            water has high specific heat—that is it’s hard to sway Waves…<br> \
+            all this worth works for Life…no, the pursuit for Life.<br> \
+            <br> \
+            in the sweltering heat<br> \
+            in the convectional rain<br> \
+            surfing to the oasis of shelter<br> \
+            loving Life, I am awake in my dreams.<br> \
+            <br> \
+            when the sun at peak,<br> \
+                an ice-tea to a lugging scrap girl<br> \
+            when the waves at peak,<br> \
+                it can only go down<br> \
+            let not my hope, my love be sinusoidal.<br> \
+            <br> \
+            potently swashing, knowing it’s evanescent<br> \
+            in the vast ocean, one in countless other waves,<br> \
+            Waves is replaceable<br> \
+            yet its unique memories drive its everyday<br> \
+            ",
+            "An eerie twilight, a pitch-black night<br> \
+            Solivagant<br> \
+            Pandæmonium upon fragile souls<br> \
+            Everywhere was you, everyone was you<br> \
+            Omnipresent? I gawked<br> \
+            Existing beyond this realm, monolithic melancholy descended upon toppling house of cards<br> \
+            Where were you? Claret moonlight leftovers<br> \
+            Deluge memories like tempests<br> \
+            Clammy tenuous mist slow to fall<br> \
+            Gaged the miserable<br> \
+            Disconsolate<br> \
+            Plethora of Lapis Lazulis touched bare feet; Utopia or Dystopia?<br> \
+            Lobotomy, pierced through flesh and soul<br> \
+            Blood stained its path a rich crimson hue<br> \
+            Drip<br> \
+            Drip<br> \
+            Drip<br> \
+            Picking it up, I wondered how, I wondered why, I wondered …<br> \
+            I caterwauled; Capitulation emerged as enlightenment<br> \
+            Solivagant<br> \
+            Lighthouse beam kindled, scouted for chrysanthemums amidst turmoil<br> \
+            Coyote pack scoured topazes for something<br> \
+            I was no better than those scavengers, ravenous for a friend; I beckoned<br> \
+            With which pack should I meld?<br> \
+            Bread was abundant, so were bones<br> \
+            Buddha was a multitude, likewise Dybbuk<br> \
+            All became irrelevant; Jade plants I was ravenous for, recluse implored beyond the chamber door<br> \
+            Fatuous! Played hide and seek with reality<br> \
+            Yet I dreamt I could gnaw you the way I gnawed bread, the only way<br> \
+            I wished I could gnaw you piece by piece<br> \
+            Then my soul from that shadow shall be lifted once and for all<br> \
+            Levitation, connecting predecessors<br> \
+            Stood upon hill’s crest; Beyond Claddagh fields of pallid yellow roses yet irrelevant<br> \
+            Guardian summoned his Moon<br> \
+            Paws kissed the earth and serenity filled glaze<br> \
+            Calypso, resonance echoed<br> \
+            Never could there be farewell<br> \
+            Pack of ravenous coyotes stared at me with night-sea eyes<br> \
+            Insisted on gnawing me piece by piece<br> \
+            Solivagant is lonesome.<br> \
+            "
+        ];
+
+        const poemImages = [
+            "./Images/1img.jpg", 
+            "./Images/2img.jpg", 
+            "./Images/3img.jpg", 
+            "./Images/4img.jpg",
+            "./Images/5img.jpg",    
+        ];
+
+        function generateRandomPoem() {
+            const poemTitleElement = document.getElementById("poem-title");
+            const poemContainer = document.getElementById("poem-container");
+            const imageContainer = document.querySelector(".image-container");
+            
+
+            // Get the current date
+            const currentDate = new Date();
+
+            // Calculate an index based on the day of the month
+            const dayIndex = currentDate.getDate() % poems.length;
+
+            // Get the title and content for the calculated index
+            const selectedTitle = poemTitles[dayIndex];
+            const selectedPoem = poems[dayIndex];
+            const selectedImage = poemImages[dayIndex];
+
+            // Format and display the title
+            poemTitleElement.innerHTML = `<h2>${selectedTitle}</h2>`;
+
+            // Format and display the poem
+            const formattedPoem = selectedPoem.replace(/\n/g, '<br>');
+            poemContainer.innerHTML = `<p>${formattedPoem}</p>`;
+
+             // Set the image source
+             imageContainer.innerHTML = `<img src="${selectedImage}" alt="">`;
+        }
+
+        // Call the function on page load
+        generateRandomPoem();
+    </script>
+
+</body>
+</html>

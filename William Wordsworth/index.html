@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>William Wordsworth</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+            
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 15px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Existence/index.html"><h4>Existence</h4></a>
+            <a href="#poem"><h2>Daffodil</h2></a>
+            <h4 id = "year">1807</h4>
+            <h4 id = "author">William Wordsworth</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./william-wordsworth.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Hulton Archive / Getty Images</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">W</span>illiam Wordsworth, considered the flagship of Romanticism, was born in the picturesque town of Cockermouth, nestled in the enchanting English Lake District. His poetic portrayal of the Dove River in his hometown contributed to its popularity as a tourist destination, even during his lifetime. After studying at Cambridge and a brief sojourn in France, the tumultuous consequences of the French Revolution compelled him to return to England.<sup><a class = "footnotes" href="#footnote1">1</a></sup>Reflecting on these experiences, he sought solace and produced notable works during this period, including an early version of his autobiographical masterpiece, <span class="italicize">The Prelude</span> (1905, extensively revised in 1915).<sup><a class = "footnotes" href="#footnote2">2</a></sup>In 1798, he, along with Samuel Taylor Coleridge<sup><a class = "footnotes" href="#footnote3">3</a></sup>, published <span class="italicize">Lyrical Ballads</span>, a collection often regarded as the cornerstone of English Romanticism. Revered by the public, Wordsworth ascended to the position of Poet Laureate<sup><a class = "footnotes" href="#footnote4">4</a></sup>in 1843.</p>
+        <p><br>Lyric poems, historically associated with brevity, musicality, and the expression of intense emotions, trace their origins back to ancient Greece. Initially, the term <span class="italicize">lyric</span> denoted a short poem sung by a solo performer with a <span class="italicize">lyre</span>.<sup><a class = "footnotes" href="#footnote4">5</a></sup><sup><a class = "footnotes" href="#footnote6">6</a></sup>Notably, specific types of lyrics, such as the ode<sup><a class = "footnotes" href="#footnote7">7</a></sup>and the elegy,<sup><a class = "footnotes" href="#footnote8">8</a></sup>originated in the ancient world. Although the concept of lyric poetry has evolved, retaining associations with short forms and subjective expression, the boundaries have become less distinct. While not all modern lyrics are intended to be sung, let alone to a lyre, they continue to focus on the inward experiences, emotions, and thoughts of a single first-person speaker. When engaging with lyric poetry, the emphasis often lies in comprehending the speaker's situation and the vivid relevance of their internal state to readers—a deliberate mastery demonstrated by Wordsworth, unlike Keats.<sup><a class = "footnotes" href="#footnote9">9</a></sup></p>
+        <p><br>The pleasure of nature, for Wordsworth, is inherently retrospective, a recurring theme in his poetry. As always, Wordsworth emerges as a poet of consciousness as much as of nature. Also notice in this poem how, in the context of the Industrial Revolution’s onset, Wordsworth used the term “wealth” to characterize the benefits derived from the sight of nature. He suggests that, amidst this transformative era, a greater wealth can be found in the natural world and in the interpretations the mind makes from it.</p>
+        <p><br>It's intriguing to note that Wordsworth's encounter with the daffodils wasn't a solitary experience. Accompanied by his sister Dorothy, he drew from her journal entries, incorporating her language into the fabric of his poem. Additionally, the collaborative nature of the poem extends further, with Wordsworth's wife contributing the memorable line "which is the bliss of solitude." In essence, this poem becomes a harmonious composition, woven together through the collective insights of Wordsworth, his sister, and his wife.<sup><a class = "footnotes" href="#footnote10">10</a></sup></p>
+        <p><br>One amusing memory that still sticks with me dates back to my seventh-grade days. In an English class, Mr. Allin posed a clarifying question: “What’s a daffodil?” To the collective amusement of the entire class, one earnest student confidently replied, “A bird!” From that day on, Mr. Allin made it a routine to ask this question, ensuring that everyone was well aware that daffodils are flowers before delving into any analysis.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>I wandered lonely as a cloud<br>
+                That floats on high o'er vales and hills,<br>
+                When all at once I saw a crowd,<br>
+                A host, of golden daffodils;<br>
+                Beside the lake, beneath the trees,<br>
+                Fluttering and dancing in the breeze.<br>
+                <br>
+                Continuous as the stars that shine<br>
+                And twinkle on the milky way,<br>
+                They stretched in never-ending line<br>
+                Along the margin of a bay:<br>
+                Ten thousand saw I at a glance,<br>
+                Tossing their heads in sprightly dance.<br>
+                <br>
+                The waves beside them danced; but they<br>
+                Out-did the sparkling waves in glee:<br>
+                A poet could not but be gay,<br>
+                In such a jocund company:<br>
+                I gazed—and gazed—but little thought<br>
+                What wealth the show to me had brought:<br>
+                <br>
+                For oft, when on my couch I lie<br>
+                In vacant or in pensive mood,<br>
+                They flash upon that inward eye<br>
+                Which is the bliss of solitude;<br>
+                And then my heart with pleasure fills,<br>
+                And dances with the daffodils.<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Woodring, Carl, and James Shapiro. <span class="italicize">The Columbia Anthology of British Poetry</span>. Columbia University Press, 1995, pp. 441.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Damrosch, Leopold. <span class="italicize">Adventures in English Literature</span>. Harcourt Brace Jovanovich, 1985, pp. 425.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Samuel Taylor Coleridge, a prominent Romantic poet, co-authored "Lyrical Ballads" with Wordsworth and produced influential works like "The Rime of the Ancient Mariner," but struggled with opium addiction throughout his life.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>The origin of the term in Britain can be traced back to the naming of Bernard André by Henry VII of England, and the establishment of the official position of Poet Laureate in England can be dated to the appointment of John Dryden in 1668.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Almost a symbol of the ancient Greek culture, the lyre, classified by Hornbostel–Sachs as part of the lute family of instruments, is a stringed musical instrument.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Bowra, Cecil. <span class="italicize">Greek Lyric Poetry: From Alcman to Simonides</span>. Oxford University Press, 1961, pp. 3.</li>
+            <li id="footnote7" class = "footnote-content"><sup class = "footnotes">7</sup>Odes, intricate and structured poems, serve to praise or glorify events or individuals while intellectually and emotionally describing nature. A traditional ode typically comprises three main parts: the strophe, the antistrophe, and the epode.</li>
+            <li id="footnote8" class = "footnote-content"><sup class = "footnotes">8</sup>An elegy is a poem characterized by serious reflection, typically serving as a lament for the deceased in English literature.</li>
+            <li id="footnote9" class = "footnote-content"><sup class = "footnotes">9</sup>Scott, Clive. <span class="italicize">Vers Libre: The Emergence of Free Verse in France 1886-1914</span>. Claredon Press, 1990, p. 65.</li>
+            <li id="footnote10" class = "footnote-content"><sup class = "footnotes">10</sup>Keane, Patrick J. “On Looking Into and Beyond Wordsworth’s Daffodils: An Intrinsic and Contextual Reading.” <span class="italicize">Numéro Cinq</span>, <a href="https://numerocinqmagazine.com/2013/11/04/on-looking-into-and-beyond-the-wordsworths-daffodils-an-intrinsic-and-contextual-reading-patrick-j-keane/">https://numerocinqmagazine.com/2013/11/04/on-looking-into-and-beyond-the-wordsworths-daffodils-an-intrinsic-and-contextual-reading-patrick-j-keane/.</a></li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px" src="../Images/logo.png" alt="">
+            </a>
+            
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

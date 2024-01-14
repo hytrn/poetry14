@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Rudyard Kipling</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+            color:#333;
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 10px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 80px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.8rem;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: 50%;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease, margin-top 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 20px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+            margin-top: 5px;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Home/index.html"><h4>Home</h4></a>
+            <a href="#poem"><h2>If—</h2></a>
+            <h4 id = "year">1910</h4>
+            <h4 id = "author">Rudyard Kipling</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./rudyard-kipling.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Panting by Philip Burne-Jones / National Potrait Gallery, London</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">R</span>udyard Kipling, born in 1865 in Bombay, Indian, was sent to a Devon boarding school at the age of 5. Later, he worked as a journalist in Lahore, Pakistan after leaving the United Services College (UK) in 1882.</span><sup><a class = "footnotes" href="#footnote1">1</a></sup>Though rejecting the Poet Laureateship in 1895 and the Order of Merit three times, being a Francophile, and marrying an American, he was considered the unofficial Poet Laureate of the Empire during his lifetime.</span><sup><a class = "footnotes" href="#footnote2">2</a></sup>Kipling was awarded the Nobel Prize for Literature in 1907.</p>
+        <p><br>Tragically, Kipling's son, Jack, was lost in action during the Battle of Loos in September, 1915. Reflecting on this loss some four years later, Kipling wrote, “My son was killed while laughing at some jest [...] I would I knew what it was and it might serve me in a time when jests are few.”</span><sup><a class = "footnotes" href="#footnote3">3</a></sup>Serving as an adviser to the Imperial War Graves Commission, Kipling famously selected the phrase ‘A soldier of the Great War, known unto God,’ to be inscribed on the epitaph of unknown soldiers.</span><sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>The affection for one's country, family, and home is intricately intertwined with a profound sense of belonging—a connection to the past, the present, and the future. Both a nation and a family embody communities that encompass the departed, the living, and those yet to be born.</p>
+        <p><br>In this poem, each line begins with the word ‘If,’ emphasizing the conditional nature of the choices that could lead to success. The poem contemplates the challenges his son might have faced and how to confront them. The choice is conditional, so only by adopting these principles wholeheartedly can one potentially reap success. The speaker personifies ‘Triumph’ and ‘Disaster’ as ‘impostors,’ recognizing them as evanescent illusions. The flow of life persists, regardless of victory or defeat.</p>
+        <p><br>In our family tradition, my dad would recite this poem to me and my sister on our 12<sup>th</sup> birthday. At that age, we weren't exactly thrilled to receive a handwritten poem on a plaque for our bedroom walls, but it came from our dad, whom I deeply admire. For my sister, my father personalized the ending to "you’ll be a Woman, my daughter!" Over time, I've come to appreciate the depth and enduring relevance of the poem, realizing the profound impact it holds and how it still resonates authentically.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>If you can keep your head when all about you<br>
+                Are losing theirs and blaming it on you,<br>   
+            If you can trust yourself when all men doubt you,<br>
+                But make allowance for their doubting too;<br>   
+            If you can wait and not be tired by waiting,<br>
+                Or being lied about, don’t deal in lies,<br>
+            Or being hated, don’t give way to hating,<br>
+                And yet don’t look too good, nor talk too wise:<br>
+                <br>
+            If you can dream—and not make dreams your master;<br>   
+                If you can think—and not make thoughts your aim;<br>   
+            If you can meet with Triumph and Disaster<br>
+                And treat those two impostors just the same;<br>   
+            If you can bear to hear the truth you’ve spoken<br>
+                Twisted by knaves to make a trap for fools,<br>
+            Or watch the things you gave your life to, broken,<br>
+                And stoop and build ’em up with worn-out tools:<br>
+                <br>
+            If you can make one heap of all your winnings<br>
+                And risk it on one turn of pitch-and-toss,<br>
+            And lose, and start again at your beginnings<br>
+                And never breathe a word about your loss;<br>
+            If you can force your heart and nerve and sinew<br>
+                To serve your turn long after they are gone,<br>   
+            And so hold on when there is nothing in you<br>
+                Except the Will which says to them: ‘Hold on!’<br>
+            
+            If you can talk with crowds and keep your virtue,<br>   
+                Or walk with Kings—nor lose the common touch,<br>
+            If neither foes nor loving friends can hurt you,<br>
+                If all men count with you, but none too much;<br>
+            If you can fill the unforgiving minute<br>
+                With sixty seconds’ worth of distance run,<br>   
+            Yours is the Earth and everything that’s in it,<br>   
+                And—which is more—you’ll be a Man, my son!<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>“Rudyard Kipling Biographical.” <span class="italicize">The Nobel Prize</span>, <a href="https://www.nobelprize.org/prizes/literature/1907/kipling/biographical/">https://www.nobelprize.org/prizes/literature/1907/kipling/biographical/.</a></li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Courtauld, George. <span class="italicize">England’s Best Loved Poems: The Enchantment of England</span>, Ebury Press, 2007, pp. 178.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>“Rudyard Kipling.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/rudyard-kipling">https://www.poetryfoundation.org/poets/rudyard-kipling.</a></li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Damrosch, Leopold. <span class="italicize">Adventures in English Literature</span>. Harcourt Brace Jovanovich, 1985, pp. 626.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

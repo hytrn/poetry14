@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>William Blake</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-right: 5px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 15px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem-hr{
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .poem p{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Nature/index.html"><h4>Nature</h4></a>
+            <a href="#poem"><h2>[To see a World in a Grain of Sand]</h2></a>
+            <h4 id = "year">1803</h4>
+            <h4 id = "author">William Blake</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./william-blake.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Painting by Thomas Phillips / National Potrait Gallery, London</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">W</span>illiam Blake, a Londoner, a poet, an engraver, an artist, and a visionary, published some of his best works almost a decade before Romanticism came into full swing with William Wordsworth and Samuel Taylor Coleridge’s heralded <span class="italicize">Lyrical Ballads</span>. After studying at Henry Pars drawing school, he apprenticed as an engraver and attended the Royal Academy. Despite facing various trials, including one for treasonous speech, he remained married in 1782, acquitted of the charges.<sup><a class = "footnotes" href="#footnote1">1</a></sup>After publishing his first book of poems, Poetical Sketches, he began experimenting with what he called <span class="italicize">illuminated printing</span>, where the images and text of each page were engraved in relief on copper, which was then used to print sheets that were then partly colored by hand, resulting in each book carrying a unique beauty with no two precisely alike. Toward the end of his life, he devoted to pictorial art, illustrating <span class="italicize">The Canterbury Tales</span><sup><a class = "footnotes" href="#footnote2">2</a></sup>, the Book of Job<sup><a class = "footnotes" href="#footnote3">3</a></sup>, and <span class="italicize">The Divine Comedy.</span><sup><a class = "footnotes" href="#footnote4">4</a></sup><sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+        <p><br>In contrast to William Blake's other renowned poems, this particular epigraph of the <span class="italicize">Auguries of Innocence</span>, remained hidden in notebooks for many years after his death. It wasn't until 1863 that it saw its first publication. So, despite the widespread familiarity of these four lines, closely tied to Blake's legacy, they only emerged into public view long after his other significant works like <span class="italicize">London</span>, <span class="italicize">The Tyger</span>, and <span class="italicize">Milton A Poem</span> (which includes the verses later adapted into the hymn <span class="italicize">Jerusalem</span>) had already been published.<sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+        <p><br>Why did I opt for this unassuming epigraphic quatrain from a less widely recognized work, eschewing his more renowned volumes? In seventh-grade, my first year in high school (high-school on PEI starts at seventh grade) and my second year in Canada, I was given this poem as part of my English mid-term exam to analyze. Gratefully, the language used in this piece proved accessible, although I stilled grappled with guessing the meaning of the word ‘palm,’ erroneously associating it, as a foreign student from a tropical locale, with a palm tree.</p>
+        <p><br>Yet, what I was able to articulate at that moment continues to resonate with me. In my written response, I offered, “In this cool quote, Blake says we should look at big things in the little things. We can't really get how super huge stuff like 'the world,' 'heaven,' 'infinity,' or 'eternity' works because our brains are very small and limited. But Blake thinks we can kind of get it if we closely look at really tiny stuff. Like, if we look at a grain of sand, we can might understand how the world works. And if we check out a beautiful flower, we can see the beauty of Heaven. Blake tells us to think about the really big things by looking at the super small things. It is about finding deep connections between the big and little things!” To this day, this poem remains one of my favorites, and hopefully it resonates with many of you as well.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id ="poem">
+            <p>To see a World in a Grain of Sand <br>
+                And a Heaven in a Wild Flower <br>
+                Hold Infinity in the palm of your hand <br>
+                And Eternity in an hour<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Mays, Kelley J. <span class="italicize">The Norton Introduction to Literature: Shorter Eleventh Edition</span>. W. W. Norton and Company, 2012, pp. 1108.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Considered Geoffrey Chaucer’s magnum opus, The Canterbury Tales consists of 24 stories, totaling more than 17,000 lines, composed in Middle English from 1387 to 1400.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>The Book of Job, also known simply as Job, is a text located in the Ketuvim section of the Hebrew Bible and serves as the initial entry in the Poetic Books of the Christian Old Testament. Scholars generally concur that it was authored during the period spanning the 7th to the 4th centuries BCE.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>The Divine Comedy is an Italian epic poem crafted by Dante Alighieri, commenced around 1308 and finalized circa 1321, shortly before the author's death. It is universally recognized as the height of Italian literature and ranks among the most significant works in Western literature.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>“William Blake.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/william-blake">https://www.poetryfoundation.org/poets/william-blake.</a></li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Tearle, Oliver. “‘To See the World in a Grain of Sand’: Meaning and Origin.” <span class="italicize">Interesting Literature</span>, <a href="https://interestingliterature.com/2023/04/to-see-the-world-in-a-grain-of-sand-meaning-origin/">https://interestingliterature.com/2023/04/to-see-the-world-in-a-grain-of-sand-meaning-origin/.</a></li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>       
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+        document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

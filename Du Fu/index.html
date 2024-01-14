@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Du Fu</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: 50%;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Love/index.html"><h4>Love</h4></a>
+            <a href="#poem"><h2>Moonlit Night</h2></a>
+            <h4 id = "year">756</h4>
+            <h4 id = "author">Du Fu</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./du-fu.jpg" alt="">
+            <div class="image-citation italicize">
+                <p>Illustration by Chelsea Feng / The China Project</p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">I</span>n the midst of the profound darkness of political and societal upheaval, the poets of the Tang dynasty emerged as stars, casting their brilliance upon the night sky. Alongside his esteemed contemporary and friend Li Bai, Du Fu is frequently regarded as one of the prominent poets in Chinese literary history. While Li Bai is revered as the <span class="italicize">Poetry Immortal</span>, Wang Wei as the <span class="italicize">Poetry Buddha</span>, and Li He as the <span class="italicize">Poetry Devil</span>, Du Fu is dubbed by Chinese scholars with the title of <span class="italicize">Poetry Sage</span>. The breadth of his poetic repertoire has led Western readers to liken him to a multitude of literary giants, including Virgil, Horace, Ovid, Shakespeare, Milton, Burns, Wordsworth, Béranger, Hugo, or Baudelaire.<sup><a class = "footnotes" href="#footnote1">1</a></sup></p>
+        <p><br>Born to a minor scholar-official in Henan Province, Du Fu faced early challenges with the loss of his mother and was raised with the assistance of an aunt. Despite preparing for the civil service exam to follow in his father's footsteps, Du Fu's attempts were unsuccessful, leading to years of extensive travel.<sup><a class = "footnotes" href="#footnote2">2</a></sup>His early poetic works wove together narratives from his journeys, recounting personal hardships and expressing sentiments towards Li Po.</p>
+        <p><br>Du Fu sought an official position through government petitioning and was appointed as a registrar in the crown prince's palace. However, the An Lushan Rebellion in 755 thwarted his assumption of the role, marking a tumultuous eight-year period of societal upheaval in China. During this time, Du Fu lived an itinerant life, documenting through poetry the events he witnessed, including famine, political turbulence, and personal tragedies.<sup><a class = "footnotes" href="#footnote3">3</a></sup></p>
+        <p><br>Despite eventually securing the position of registrar, Du Fu's conscientious approach led to demotion. He later relocated to Sichuan, where he dwelled in a cottage and composed numerous poems depicting his comparatively contented life. His later years were marked by continued mobility, including a notable two-year period in Kuizhou, where he garnered the support of the regional governor and produced many poems in his characteristic dense style. Du Fu and his family resumed their travels in 768, and he passed away in Hunan Province, survived by his wife and two sons.</p>
+        <p><br>Du Fu is frequently characterized as a poet-historian, with his works reflecting the emotional resonance and significance of political and social issues, encompassing a spectrum of personal concerns, trials, and dramas. His poetry stands out for its diverse range of moods and thematic content. According to translator David Hinton, Du Fu "explored the full range of experience, and from this abundance shaped the monumental proportions of being merely human."<sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>In this dedicated poem to his wife, Du Fu employs tender and evocative language to intensify the yearning between husband and wife. The poem's central theme, focused on the moon, inherently evokes a sense of solitude and secrecy. Readers can deduce that Du Fu is situated in Chang’an, separated from his family residing in Fuzhou. The verses hint at the deep memories created by the couple in Chang’an, particularly during the ten-year confinement imposed by the An Lushan Rebellion, where they shared numerous hardships. Du Fu's juxtaposition of his children's innocence with the harsh realities of adulthood underscores the poignant moments of his past.</p>
+        <p><br>The poet further details the moon's interaction with his wife, expressing his longing to be reunited with her. The imagery of '香雾' (sweet-smelling fog) and '清辉' (cold clouds) may symbolize their relationship, with the moon serving as a substitute for Du Fu's physical presence, caressing his wife. It is the exquisite yet aloof moon that serves as the ethereal connection between the distant couple.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>The moon tonight in Fu-chou<br>
+                She watches alone from her chamber,<br>
+                While faraway I think lovingly on daughters and sons,<br>
+                Who do not yet know how to remember Ch’ang-an.<br>
+                In scented fog, her cloudlike hairdo moist,<br>
+                In its clear beams, her jade-white arms are cold.<br>
+                When shall we lean in the empty window,<br>
+                Moonlit together, its light drying traces of tears.<br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Stephen Owen<sup><a class = "footnotes" href="#footnote5">5</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                今夜鄜州月，<br>闺中只独看。<br>
+                遥怜小儿女，<br>未解忆长安。<br>
+                香雾云鬟湿，<br>清辉玉臂寒。<br>
+                何时倚虚幌，<br>双照泪痕干。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>Hung, William. <span class="italicize">Tu Fu: China's Greatest Poet.</span>. Harvard University Press, 1952.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Watson, Burton. <span class="italicize">The Selected Poems of Du Fu</span>. Columbia University Press, 2002.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Chou, Eva Shan. <span class="italicize">Reconsidering Tu Fu: Literary Greatness and Cultural Context</span>. Cambridge University Press, 1995.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>“Du Fu.” <span class="italicize">Poetry Foundation</span>, <a href="https://www.poetryfoundation.org/poets/tu-fu">https://www.poetryfoundation.org/poets/tu-fu.</a></li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Owen, Stephen. <span class="italicize">The Great Age of Chinese Poetry: The High T’ang</span>. Yale University Press, 1981, pp. 200.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>

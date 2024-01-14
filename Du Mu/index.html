@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== TITLE ===============-->
+    <title>Du Mu</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="icon" href="../Images/logo.png">
+
+    <!--=============== FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Sevillana&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cormorant+Garamond&family=EB+Garamond&family=GFS+Didot&family=Libre+Baskerville&family=Libre+Bodoni&family=Libre+Franklin:wght@200&family=Merriweather:wght@300&family=Poppins&family=Prata&family=Sevillana&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!--=============== ICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--=============== BOOTSTRAP CSS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+            padding-top: 80px; /* Add some padding to the top of the body */
+        }
+        /*NAV BAR*/
+        header{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            padding: 40px 100px;
+            z-index: 1000000;
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 1px 5px #454545;
+        }
+        header div{
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        header img{
+            height: 50px;
+        }
+        header .logo{
+          position: relative;  
+          font-weight: 500;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.75em;
+          text-transform: uppercase;
+          letter-spacing: 2.5px;
+          transition: .3s;
+          font-family: 'Prata', serif;
+          margin-left: 20px;;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li {
+            position: relative;
+            list-style: none;
+        }
+        header ul a {
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header.sticky .logo{
+            display: none;
+        }
+        /*INTRODUCTION SECTION*/
+        .intro {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro article {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .intro article a{
+            text-decoration: none;
+        }
+        .intro h4{
+            font-size: 1rem;
+            text-align: center;
+            color: #BF3131;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .intro article a:hover h4 {
+            color: darkred;
+        }
+        .intro article h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "GFS Diot", serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 0px;;
+        }
+        .intro article #year {
+            color: #333;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+        .intro article #author {
+            text-transform: uppercase;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 599;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .intro .ornament-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-5px);
+        }
+        .intro .ornament-container img {
+            width: 40%; /* Adjust the width as needed */
+            height: auto;
+        }
+        .intro .image-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .intro .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+            transition: transform 0.3s ease;
+        }
+        .intro .image-container:hover img {
+            transform: scale(1.1);
+            height: 110%; /* Increase the height on hover */
+        }
+        .intro .image-citation {
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            padding-top: 4px;
+            padding-left: 30px;
+            font-family: 'EB Garamond', serif;
+            transition: transform 0.3s ease, margin-top 0.3s ease; /* Added margin-top transition */
+        }
+        .intro .image-container:hover .image-citation {
+            transform: translateY(10px); /* Adjusted translateY */
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+        /*CONTENT SECTION*/        
+        .content{
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            overflow: hidden;
+        }
+        .content p{
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'EB Garamond', serif;
+            width: 100%;
+        }
+        .content .drop-cap {
+            font-size: 4em;
+            margin-right: 10px;
+            color: #BF3131;
+
+            float: left;
+            text-transform: uppercase;
+            font-family: 'Sevillana', cursive;
+            
+            line-height: .7;
+            font-size: 4.85em;
+            margin-top: 0.2em;
+            margin-right: 0.5rem;
+            font-style: normal;
+        }
+        .italicize{
+            font-style: italic;
+        }
+        /*FOONOTES SECTION*/
+        .footnotes{
+            text-decoration: none;
+            color: #BF3131;
+            margin-right: 0.20em;
+            margin-left: 0.20em;
+        }
+        #footnote-hr{
+            overflow: visible; /* For IE */
+            padding: 0;
+            border: none;
+            border-top: medium double #333;
+            color: #333;
+            text-align: center;
+        }
+        #footnote-hr:after{
+            background: #f9f9f9;
+            content: "§";
+            padding: 0 0.25em; 
+            transform: translateY(-50%);
+            display: inline-block;
+        }
+        ol {
+            padding-left: 0;
+        }
+        ol li{
+            list-style: none;
+        }
+        .footnote-content{
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color:#333;
+            font-family: 'EB Garamond', serif;
+            margin-bottom: 10px;
+        }
+        ol a{
+            color: #BF3131;
+        }
+        /*POEM SECTION*/
+        .poem{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .poem p{
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .poem-hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            text-align: center;
+            width: 50%;
+            margin: auto; /* Add margin:auto to center the hr horizontally */
+        }
+        .citation{
+            text-align: right;
+            font-size: 1rem;
+            color: #333; /* Adjust the color as needed */
+            font-family: 'EB Garamond', serif;
+        }
+        /*FOOTER*/
+        .social-icon{
+        font-size: 24px; /* Change this size to your desired icon size */
+        transition: color 0.3s; /* Added transition for smoother color change */
+        }
+        .social-icon:hover{
+            color: #BF3131;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img id = "logo-image" src="../Images/logo.png" alt="">
+            <a href="../index.html" class = "logo">Poetry 14</a>
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../POD/index.html">Poem of the Day</a></li>
+        </ul>
+    </header>
+
+    <section class = "intro">
+        <article>
+            <a href="../Regret/index.html"><h4>Regret</h4></a>
+            <a href="#poem"><h2>Autumn Evening</h2></a>
+            <h4 id = "year">Late Tang</h4>
+            <h4 id = "author">Du Mu</h4>
+            <div class="ornament-container">
+                <img src="../Images/chapter-ornament1.png" alt="Chapter Ornament">
+            </div>
+            
+        </article>
+        <div class="image-container">
+            <img src="./du-mu.jfif" alt="">
+            <div class="image-citation italicize">
+                <p>(Public Domain)   </p>
+            </div>
+        </div>
+    </section>
+    <div class = "content">
+        <p><span class="drop-cap">D</span>u Mu, born in Tang capital Chang'an to the declining Jingzhao Du clan during the late Tang period, passed the <span class="italicize">jinshi</span><sup><a class = "footnotes" href="#footnote1">1</a></sup>degree in 828, starting a bureaucratic career. As the grandson of the esteemed historian Du You, he had a deep knowledge of Confucian and military classics. He held minor positions and faced obstacles in reaching higher office, partly due to family setbacks and political intrigues of the time.<sup><a class = "footnotes" href="#footnote2">2</a></sup>His frustration is evident in his poetry, and he regularly wrote letters critiquing government policies and military strategies to those in power. Just before his death, he secured the role of Drafter in the Secretariat. Like many scholar-officials, Du Mu excelled not only in poetry but also in calligraphy, painting, and essays.</p>
+        <p><br>He had a penchant for discussing military matters, evident in works such as Zui Yan (literally, ‘Talk on Crimes’) and his commentary on Sun Tzu's The Art of War. Infused with military tactics, Du Mu's poems displayed audacity and vigor, characterized by bold and unrestrained expression. Du Mu was called "Little Du" to distinguish him from Du Fu , "Big Du". His poetic acclaim rivaled that of Li Shangyin,<sup><a class = "footnotes" href="#footnote3">3</a></sup>leading later generations to refer to the two poets collectively as “Little Li Du”–the duo became the Li Bai and Du Fu of their time.<sup><a class = "footnotes" href="#footnote4">4</a></sup></p>
+        <p><br>As a child, I was exposed to numerous references to the Qixi Festival, which is the Chinese version of Valentine’s Day, on TV, and it's kind of strange how many kids' shows focus so much on the theme of boy-girl love! In recent years, the popularity of this event has only increased. I'm well-versed in the myth associated with the festival, which celebrates the annual meeting of the star-crossed lovers, the Cowherd (Niulang) and the Weaver Girl (Zhinü). The festival is observed on the seventh day of the seventh lunar month on the Chinese lunisolar calendar.</p>
+        <p><br>Despite their deep affection, their love was forbidden, leading to their banishment to opposite sides of the heavenly river, symbolizing the Milky Way. Once a year, on the seventh day of the seventh lunar month, a flock of magpies, responsible for their separation, would form a bridge to reunite the lovers for a single day. This narrative kindled my passion for astronomy, where the Cowherd and the Weaver Girl represent the Altair and Vega stars. This tale has been alluded to in various literary works, including a famous but not explicitly related poem. The poem tells of a lonely concubine at the palace whose fan loses its purpose as summer ends, believed to be an allusion by the poet expressing frustrations about his family's declining influence.</p>
+        <p><br>By utilizing a cold and distant choice of words along with vivid imagery, Du Mu evokes a sense of solitude in his poem. The implied focus of the composition is a youthful woman residing in opulence, hinted at by the mention of a silk fan—a luxury and a symbol of affluence in ancient China. Despite her elevated status, the poem suggests that rather than socializing with companions, she engages with fireflies and contemplates the stars alone during the nocturnal hours.<sup><a class = "footnotes" href="#footnote5">5</a></sup>This portrayal unveils her as a solitary figure, living in seclusion for reasons undisclosed.</p>
+        <p><br>Du Mu reinforces this theme of isolation through the chilly atmosphere depicted in the poem, where terms like ‘冷’ (chill) and ‘凉’ (cool) connote a lack of vibrancy and vitality that accompanies the absence of others. The cause of her sequestered existence might be rooted in a broken heart, hinted at by the concluding lines that allude to the poignant Chinese legend of the Cowherd and the Weaving Maid—lovers separated by their disparate celestial and earthly statuses. Speculatively, if this maiden serves as a concubine to the emperor, she could be estranged from her imperial peers due to a childhood love. Although the exact cause of her isolation remains elusive, the poem unmistakably conveys the subject's profound sense of desolation.</p>
+        <hr id="footnote-hr">
+        <div class="poem" id="poem">
+            <p>Silvery candle, autumnal light, chills the painted screen<br>
+                With small fan, of light silk gauze, she swipes at the flitting fireflies<br>
+                On the palace steps, the night is cool, like water<br>
+                Laying down, she gazes, the Cowherd and the Weaver Girl stars<br>
+            </p>
+            <div class="citation italicize">
+                <p>Translated by Red Pine<sup><a class = "footnotes" href="#footnote6">6</a></sup></p>
+            </div>
+            <hr class="poem-hr">
+            <p>
+                銀燭秋光冷畫屏，<br>
+                輕羅小扇撲流螢。<br>
+                天階夜色涼如水，<br>
+                臥看牛郞織女星。<br>
+            </p>
+        </div>
+        <hr id="footnote-hr">
+        <ol>
+            <li id="footnote1" class = "footnote-content"><sup class = "footnotes">1</sup>The Jinshi exam was a prestigious imperial examination system in ancient China, established during the Sui dynasty and continued through the Tang dynasty. It served as the highest level of the civil service examination, testing candidates on their knowledge of classical Chinese literature and Confucian principles. Successfully passing the Jinshi exam granted individuals entry into the elite scholar-official class, offering opportunities for high-ranking positions in the imperial bureaucracy. The test typically occurred in the imperial capital within the palace and was alternatively known as the Metropolitan Exam.</li>
+            <li id="footnote2" class = "footnote-content"><sup class = "footnotes">2</sup>Nienhauser, William H. <span class="italicize">The Indiana Companion to Traditional Chinese Literature</span>. Indiana University Press, 1986, pp. 824–826.</li>
+            <li id="footnote3" class = "footnote-content"><sup class = "footnotes">3</sup>Li Shangyin was a Chinese poet of the late Tang Dynasty, born around 813 and passing away in 858. Known for his distinctive and complex style, Li Shangyin's poetry often explores themes of love, longing, and the transient nature of life. Despite facing political turmoil during his lifetime, his works have endured and continue to be celebrated for their rich imagery and emotional depth in Chinese literary history.</li>
+            <li id="footnote4" class = "footnote-content"><sup class = "footnotes">4</sup>Owen, Stephen. <span class="italicize">The Late Tang: Chinese Poetry of the Mid-Ninth Century</span>. Harvard University Asia Center, 2006, pp. 271–272.</li>
+            <li id="footnote5" class = "footnote-content"><sup class = "footnotes">5</sup>Owen, Stephen. <span class="italicize">The Late Tang: Chinese Poetry of the Mid-Ninth Century</span>. Harvard University Asia Center, 2006, pp. 289.</li>
+            <li id="footnote6" class = "footnote-content"><sup class = "footnotes">6</sup>Red Pine. <span class="italicize">Poems of the Masters: China's Classic Anthology of T'ang and Sung Dynasty Verse</span>. Copper Canyon Press, 2003.</li>
+        </ol>
+    </div>
+
+
+
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img style="height:36px"src="../Images/logo.png" alt="">
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© <span id="footer-year"></span> Hy Tran</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/_hytrn/"><i class="fa-brands fa-instagram social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted " href="https://www.goodreads.com/user/show/133261410-hy-tran"><i class="fa-brands fa-goodreads-g social-icon"></i></a></li>
+            <li class="ms-3"><a class="text-muted" href="mailto:hytranpei@gmail.com"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        /*=============== SMOOTH SCROLLING ===============*/
+        document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('sup a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+    </script>
+    <script type = "text/javascript">
+        window.addEventListener ("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY>0);
+        });
+    </script>
+</body>
+</html>
